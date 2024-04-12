@@ -6,18 +6,18 @@
   :root {
     --surface-default: 255 255 255;
     --surface-inverse: 0 0 0;
-    --surface-secondary: 0 0 97;
-    --surface-accent-primary: 269 100 94;
-    --surface-accent-secondary: 32 100 87;
+    --surface-secondary: 248 248 248;
+    --surface-accent-primary: 238 222 255;
+    --surface-accent-secondary: 255 224 189;
 
     --foreground-default: 0 0 0;
     --foreground-inverse: 255 255 255;
-    --foreground-secondary: 0 0 55;
-    --foreground-tertiary: 0 0 29;
+    --foreground-secondary: 141 141 141;
+    --foreground-tertiary: 74 74 74;
     --foreground-on-accent: 255 255 255;
 
-    --border: 0 0 55;
-    --border-secondary: 0 0 29;
+    --border: 141 141 141;
+    --border-secondary: 74 74 74;
 
     --radius: 0.5rem;
   }
@@ -25,18 +25,18 @@
   .dark {
     --surface-default: 0 0 0;
     --surface-inverse: 255 255 255;
-    --surface-secondary: 0 0 17;
-    --surface-accent-primary: 269 100 94;
-    --surface-accent-secondary: 32 100 87;
+    --surface-secondary: 54 54 54;
+    --surface-accent-primary: 238 222 255;
+    --surface-accent-secondary: 255 224 189;
 
     --foreground-default: 255 255 255;
     --foreground-inverse: 0 0 0;
-    --foreground-secondary: 0 0 59;
-    --foreground-tertiary: 0 0 89;
+    --foreground-secondary: 150 150 150;
+    --foreground-tertiary: 227 227 227;
     --foreground-on-accent: 255 255 255;
 
-    --border: 0 0 59;
-    --border-secondary: 0 0 89;
+    --border: 150 150 150;
+    --border-secondary: 227 227 227;
 
     --radius: 0.5rem;
   }
