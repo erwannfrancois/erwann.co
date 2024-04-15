@@ -32,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="flex mx-auto items-center justify-between max-w-[1600px] mt-12 md:mt-24 px-4 md:px-8 py-2 md:py-3">
+          <main className="flex mx-auto items-center max-w-[1600px] mt-12 md:mt-24 py-2 md:py-3 px-4 md:px-0">
             {children}
           </main>
         </ThemeProvider>

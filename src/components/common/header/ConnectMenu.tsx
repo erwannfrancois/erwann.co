@@ -19,34 +19,45 @@ export default function ConnectMenu() {
     return "text-foreground-secondary";
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="font-medium underline decoration-dotted underline-offset-4 hover:decoration-solid">
-        Let&apos;s connect
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" forceMount className="space-y-2">
-        {socialItems.map((item, index) => (
-          <a
-            key={item.href}
-            href={item.href}
-            target="_blank"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(-1)}
-            className={cn(
-              "flex align-baseline items-baseline justify-between space-x-8 py-2 px-3 rounded-sm bg-surface-secondary dark:hover:text-foreground-inverse",
-              hoveredIndex === index && item.hoverBg
-            )}
-          >
-            <div className="space-x-2">
-              <span>{item.emoji}</span>
-              <span className="font-medium">{item.label}</span>
-            </div>
-            <span className={cn("text-sm", getTextColorClass(index))}>
-              {item.handle}
-            </span>
-          </a>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div>
+      <DropdownMenu onOpenChange={setIsMenuOpen}>
+        <DropdownMenuTrigger className="font-medium underline decoration-dotted underline-offset-4 hover:decoration-solid">
+          Let&apos;s connect
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" forceMount className="space-y-2">
+          {socialItems.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              target="_blank"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(-1)}
+              className={cn(
+                "flex align-baseline items-baseline justify-between space-x-8 py-2 px-3 rounded-sm bg-surface-secondary dark:hover:text-foreground-inverse",
+                hoveredIndex === index && item.hoverBg
+              )}
+            >
+              <div className="space-x-2">
+                <span>{item.emoji}</span>
+                <span className="font-medium">{item.label}</span>
+              </div>
+              <span className={cn("text-sm", getTextColorClass(index))}>
+                {item.handle}
+              </span>
+            </a>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+      {isMenuOpen && (
+        <div className="w-screen h-screen backdrop-blur-sm bg-white/20 z-0 fixed top-0 left-0"></div>
+      )}
+    </div>
   );
 }
