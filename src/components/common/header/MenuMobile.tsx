@@ -37,9 +37,15 @@ export default function MenuMobile() {
     setShowSocialItems(!showSocialItems);
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="flex md:hidden">
-      <DropdownMenu>
+      <DropdownMenu onOpenChange={setIsMenuOpen}>
         <DropdownMenuTrigger className="font-medium underline underline-offset-4">
           Menu
         </DropdownMenuTrigger>
@@ -48,7 +54,7 @@ export default function MenuMobile() {
           forceMount
           className="space-y-2 md:mt-0"
         >
-          {navItems.map((item) => (
+          {/* {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -67,7 +73,7 @@ export default function MenuMobile() {
                 <span className="font-medium">{item.label}</span>
               </div>
             </Link>
-          ))}
+          ))} */}
 
           {/* Connect */}
           <div
@@ -109,6 +115,9 @@ export default function MenuMobile() {
             ))}
         </DropdownMenuContent>
       </DropdownMenu>
+      {isMenuOpen && (
+        <div className="w-screen h-screen backdrop-blur-sm bg-white/20 z-0 fixed top-0 left-0"></div>
+      )}
     </div>
   );
 }

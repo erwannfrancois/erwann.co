@@ -24,7 +24,7 @@ export default function Menu() {
 
   return (
     <nav className="hidden md:flex flex-row space-x-4">
-      <ul className="md:flex items-center space-x-4">
+      {/* <ul className="md:flex items-center space-x-4">
         {navItems.map((item) => (
           <li key={item.href}>
             <Link
@@ -43,7 +43,7 @@ export default function Menu() {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
       <ConnectMenu />
     </nav>
   );

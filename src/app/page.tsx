@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <a
                 href="mailto:mail@erwann.co"
-                className="text-foreground-secondary"
+                className="text-foreground-secondary hover:underline hover:underline-offset-4"
               >
                 mail@erwann.co
               </a>
