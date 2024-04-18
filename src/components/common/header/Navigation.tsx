@@ -7,7 +7,7 @@ import Link from "next/link";
 import { navItems } from "@/constants/nav-items";
 import { usePathname } from "next/navigation";
 
-const navLinkVariants = cva("font-medium", {
+const navLinkVariants = cva("", {
   variants: {
     state: {
       default: "hover:underline hover:underline-offset-4",
@@ -24,7 +24,7 @@ export default function Navigation() {
 
   return (
     <nav>
-      <ul className="md:flex items-center space-x-6">
+      <ul className="flex md:items-center space-x-6">
         {navItems.map((item) => (
           <li key={item.href}>
             <Link
