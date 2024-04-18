@@ -1,5 +1,6 @@
 "use client";
 
+import CardList from "@/components/homepage/CardList";
 import { fontSecondary } from "@/config/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -30,7 +31,7 @@ export default function Home() {
         <div>
           <Image
             src="/homepage/Photos/Erwann-Placeholder.avif"
-            alt="Picture of the author"
+            alt="Erwann François - Software Engineer"
             sizes="100vw"
             width={160}
             height={90}
@@ -50,13 +51,25 @@ export default function Home() {
           <div className="flex flex-col md:items-end">
             <p>Reach me by email</p>
             <p
-              className="text-foreground-secondary"
+              className="text-foreground-secondary cursor-pointer"
               onClick={handleCopyToClipboard}
             >
               mail@erwann.co
             </p>
           </div>
         </div>
+      </div>
+      <p
+        className={cn(
+          "my-32 text-xl md:text-4xl font-medium font-secondary text-center",
+          fontSecondary.variable
+        )}
+      >
+        Discover more about me below.
+      </p>
+      {/* Cards */}
+      <div className="w-full">
+        <CardList />
       </div>
     </div>
   );
