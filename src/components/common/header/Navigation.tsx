@@ -1,11 +1,11 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import ConnectMenu from "./ConnectMenu";
+
 import { navItems } from "@/constants/nav-items";
+import { usePathname } from "next/navigation";
 
 const navLinkVariants = cva("font-medium", {
   variants: {
@@ -19,12 +19,12 @@ const navLinkVariants = cva("font-medium", {
   },
 });
 
-export default function Menu() {
+export default function Navigation() {
   const asPath = usePathname();
 
   return (
-    <nav className="hidden md:flex flex-row space-x-4">
-      {/* <ul className="md:flex items-center space-x-4">
+    <nav>
+      <ul className="md:flex items-center space-x-6">
         {navItems.map((item) => (
           <li key={item.href}>
             <Link
@@ -43,8 +43,7 @@ export default function Menu() {
             </Link>
           </li>
         ))}
-      </ul> */}
-      <ConnectMenu />
+      </ul>
     </nav>
   );
 }

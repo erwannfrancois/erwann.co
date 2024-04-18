@@ -9,7 +9,7 @@ import { fontPrimary } from "@/config/fonts";
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
   description:
-    "Erwann François is a product-centered full-stack software engineer with a love for exploration both in code and in life. He is currently available for hire.",
+    "Erwann François is a product-centred full-stack software engineer with a love for exploration both in code and in life. He is currently available for hire.",
 };
 
 export default function RootLayout({

@@ -1,12 +1,5 @@
 export const socialItems = [
   {
-    href: "mailto:mail@erwann.co",
-    emoji: "📬",
-    label: "Email",
-    handle: "mail@erwann.co",
-    hoverBg: "bg-pink-200",
-  },
-  {
     href: "https://www.linkedin.com/in/erwannfrancois/",
     emoji: "💼",
     label: "LinkedIn",
