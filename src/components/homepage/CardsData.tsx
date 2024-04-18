@@ -341,9 +341,9 @@ export const cardData = [
   { layout: <SocialCard />, color: "bg-white", order: 1 },
   { layout: <MarathonCard />, color: "bg-orange-200", order: 2 },
   { layout: <CareerCard />, color: "bg-blue-200", order: 3 },
-  { layout: <EFTypeCard />, color: "bg-yellow-200", order: 4 },
-  { layout: <ErwannCard />, color: "bg-sky-200", order: 5 },
-  { layout: <TravelCard />, color: "bg-lime-200", order: 6 },
-  { layout: <EmbarkCard />, color: "bg-purple-200", order: 7 },
+  { layout: <EFTypeCard />, color: "bg-yellow-200", order: 5 },
+  { layout: <ErwannCard />, color: "bg-sky-200", order: 4 },
+  { layout: <TravelCard />, color: "bg-lime-200", order: 7 },
+  { layout: <EmbarkCard />, color: "bg-purple-200", order: 6 },
   { layout: <MoodCard />, color: "bg-pink-200", order: 8 },
 ];
