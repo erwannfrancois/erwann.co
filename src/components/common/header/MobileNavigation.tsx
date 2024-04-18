@@ -4,6 +4,8 @@ import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useState } from "react";
 import ThemeSwitcher from "../theme/ThemeSwitcher";
+import { fontSecondary } from "@/config/fonts";
+import { cn } from "@/lib/utils";
 
 export default function MobileNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,10 +40,15 @@ export default function MobileNavigation() {
               <Cross1Icon className="w-8 h-8" onClick={toggleMobileMenu} />
             </div>
             <nav className="pt-12 pb-8 px-8 border-b">
-              <ul className="flex flex-col gap-3">
+              <ul
+                className={cn(
+                  "flex flex-col gap-3 font-secondary",
+                  fontSecondary.variable
+                )}
+              >
                 {navItems.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-2xl">
+                    <Link href={item.href} className="text-3xl">
                       {item.label}
                     </Link>
                   </li>

@@ -20,3 +20,12 @@ export const fontPrimary = localfont({
   ],
   variable: "--font-primary",
 });
+
+export const fontSecondary = localfont({
+  src: [
+    {
+      path: "../../public/fonts/Erode/Erode-Variable.ttf",
+    },
+  ],
+  variable: "--font-secondary",
+});
