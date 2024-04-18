@@ -5,11 +5,12 @@ import { ThemeProvider } from "@/components/common/theme/ThemeProvider";
 import Header from "@/components/common/header/Header";
 
 import { fontPrimary } from "@/config/fonts";
+import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
   description:
-    "Erwann François is a product-centered full-stack software engineer with a love for exploration both in code and in life. He is currently available for hire.",
+    "Erwann François is a product-centred full-stack software engineer with a love for exploration both in code and in life. He is currently available for hire.",
 };
 
 export default function RootLayout({
@@ -32,9 +33,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="flex mx-auto items-center max-w-[1600px] mt-12 md:mt-24 py-2 md:py-3 px-4 md:px-0">
+          <main className="flex mx-auto items-center max-w-[1600px] mt-8 md:mt-15 py-2 md:py-3 px-4 md:px-0">
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

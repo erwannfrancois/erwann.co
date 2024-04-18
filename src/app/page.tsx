@@ -1,49 +1,75 @@
-import ThemeSwitcher from "@/components/common/theme/ThemeSwitcher";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+"use client";
+
+import CardList from "@/components/homepage/CardList";
+import { fontSecondary } from "@/config/fonts";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Home() {
+  const handleCopyToClipboard = () => {
+    const textToCopy = "mail@erwann.co";
+    navigator.clipboard
+      .writeText(textToCopy)
+      .catch((error) => console.error("Error copying text: ", error));
+  };
+
   return (
-    <div className="flex md:grid md:grid-cols-4 gap-4 md:gap-10 mx-auto items-start mb-12">
-      <div className="col-span-3">
-        <div className="flex flex-col space-y-12 md:space-y-20">
-          <div className="text-xl md:text-display font-medium text-foreground-secondary space-y-8">
+    <div>
+      <div className="flex flex-col gap-10 md:max-w-[50%] mx-auto">
+        <h1
+          className={cn(
+            "text-3xl md:text-display font-light font-secondary text-center",
+            fontSecondary.variable
+          )}
+        >
+          I&apos;m <span className="font-medium">Erwann</span>, a
+          product-centred{" "}
+          <span className="font-medium">full-stack software engineer</span> with
+          a love for exploration both in code and in life.
+        </h1>
+
+        <div>
+          <Image
+            src="/homepage/Photos/Erwann-Placeholder.avif"
+            alt="Erwann François - Software Engineer"
+            sizes="100vw"
+            width={160}
+            height={90}
+            className="rounded-xl w-full h-auto"
+          />
+        </div>
+        <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-start justify-between pt-4 border-t font-medium leading-tight">
+          <div>
             <p>
-              I&apos;m <span className="text-foreground">Erwann</span>, a
-              product-centered{" "}
-              <span className="text-foreground">
-                full-stack software engineer
-              </span>{" "}
-              with a love for exploration both in code and in life.
+              Currently seeking full-time contract opportunities as a software
+              engineer,
             </p>
-            <p>
-              When I&apos;m not coding or designing, you&apos;ll probably find
-              me training for my first{" "}
-              <span className="text-foreground">marathon</span>, discovering{" "}
-              <span className="text-foreground">new cultures</span>, lost in a
-              good <span className="text-foreground">book</span>, embracing the
-              great <span className="text-foreground">outdoors</span>.
+            <p className="text-foreground-secondary">
+              I&apos;m excited to contribute my expertise to dynamic projects.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row justify-between items-start py-4 border-t font-medium space-y-4 md:space-y-0">
-            <div className="flex flex-col space-x-0">
-              <p>Currently seeking full-time contract opportunities,</p>
-              <p className="text-foreground-secondary">
-                I’m excited to contribute my expertise to dynamic projects.
-              </p>
-            </div>
-            <div className="flex flex-row space-x-4 md:space-x-0 md:flex-col md:items-end">
-              <p className="flex flex-row items-center">
-                <ArrowRightIcon className="mr-2" /> Reach me by email
-              </p>
-              <a
-                href="mailto:mail@erwann.co"
-                className="text-foreground-secondary hover:underline hover:underline-offset-4"
-              >
-                mail@erwann.co
-              </a>
-            </div>
+          <div className="flex flex-col md:items-end">
+            <p>Reach me by email</p>
+            <p
+              className="text-foreground-secondary cursor-pointer"
+              onClick={handleCopyToClipboard}
+            >
+              mail@erwann.co
+            </p>
           </div>
         </div>
+      </div>
+      <p
+        className={cn(
+          "my-32 text-xl md:text-4xl font-medium font-secondary text-center",
+          fontSecondary.variable
+        )}
+      >
+        Discover more about me below.
+      </p>
+      {/* Cards */}
+      <div className="w-full">
+        <CardList />
       </div>
     </div>
   );

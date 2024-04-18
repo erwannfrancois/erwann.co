@@ -21,6 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         primary: ["var(--font-primary)"],
+        secondary: ["var(--font-secondary)"],
       },
       fontSize: {
         lg: ["22px", "28px"],

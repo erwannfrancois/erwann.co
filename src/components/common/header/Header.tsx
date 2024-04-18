@@ -1,33 +1,40 @@
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+"use client";
+
 import Link from "next/link";
-import Menu from "./Menu";
-import MenuMobile from "./MenuMobile";
+import Navigation from "./Navigation";
 import ThemeSwitcher from "../theme/ThemeSwitcher";
+import MobileNavigation from "./MobileNavigation";
 
 export default function Header() {
-  return (
-    <header className="flex mx-auto items-center max-w-[1600px] py-2 md:py-3 px-4 md:px-0">
-      <div className="flex flex-row w-full justify-between items-start">
-        <div className="flex flex-col md:flex-row md:items-center font-medium">
-          <Link
-            href="/"
-            className="md:hover:underline hover:underline-offset-4"
-          >
-            Erwann François
-          </Link>
-          <div className="flex flex-row items-center">
-            <ArrowRightIcon className="mr-1 md:mr-2 md:ml-2 text-foreground-secondary" />
-            <span className="text-foreground-secondary">
-              Available for hire
-            </span>
-          </div>
-        </div>
-        <div className="flex flex-row items-center space-x-8 md:space-x-12">
-          <ThemeSwitcher />
+  const handleCopyToClipboard = () => {
+    const textToCopy = "mail@erwann.co";
+    navigator.clipboard
+      .writeText(textToCopy)
+      .catch((error) => console.error("Error copying text: ", error));
+  };
 
-          <Menu />
-          <MenuMobile />
+  return (
+    <header className="flex items-center py-6 px-8 md:px-0 border-b">
+      <div className="flex flex-row items-center max-w-[1600px] mx-auto justify-between w-full">
+        <div className="flex flex-col md:flex-row md:items-center md:gap-4 font-medium">
+          <Link href="/">Erwann François</Link>
+          <p className="text-foreground-secondary">Available for hire</p>
         </div>
+        <div className="hidden md:flex flex-row items-center gap-20 font-medium">
+          {/* Navigation */}
+          <Navigation />
+          {/* Theme Switcher */}
+          <ThemeSwitcher />
+          {/* Email */}
+          <p
+            className="font-medium cursor-pointer"
+            onClick={handleCopyToClipboard}
+          >
+            mail@erwann.co
+          </p>
+        </div>
+        {/* Mobile nav */}
+        <MobileNavigation />
       </div>
     </header>
   );
