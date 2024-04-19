@@ -30,9 +30,9 @@ export default function MobileNavigation() {
         <HamburgerMenuIcon className="w-8 h-8" />
       </p>
       {isMobileMenuOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-surface z-50">
-          <div className="flex flex-col">
-            <div className="flex flex-row justify-between items-center py-6 px-8 border-b">
+        <div className="fixed top-0 left-0 w-full h-screen bg-surface z-50">
+          <div className="flex flex-col bg-surface">
+            <div className="flex flex-row justify-between items-center py-4 px-8 border-b">
               <div className="flex flex-col font-medium">
                 <Link href="/">Erwann François</Link>
                 <p className="text-foreground-secondary">Available for hire</p>
