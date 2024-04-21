@@ -2,12 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import { navigationLinks } from "@/constants/navigation";
-import { cn } from "@/lib/utils";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
 import Link from "next/link";
-import { LiaTimesSolid } from "react-icons/lia";
-import { SiLinkedin, SiGithub, SiStrava, SiGoodreads } from "react-icons/si";
 import SocialMediaLinks from "../socials/SocialLinks";
+import ThemeSwitcher from "../theme/ThemeSwitcher";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +18,11 @@ export default function Header() {
   //  Handles clicks outside of the menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (
+        window.screen.width > 768 &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
         toggleMenu();
       }
     };
@@ -57,10 +59,10 @@ export default function Header() {
               fill="none"
               viewBox="0 0 18 18"
             >
-              <path fill="#fff" d="M0 0H6V6H0z"></path>
-              <path fill="#fff" d="M0 12H6V18H0z"></path>
-              <path fill="#fff" d="M12 0H18V6H12z"></path>
-              <path fill="#fff" d="M12 12H18V18H12z"></path>
+              <path fill="currentColor" d="M0 0H6V6H0z"></path>
+              <path fill="currentColor" d="M0 12H6V18H0z"></path>
+              <path fill="currentColor" d="M12 0H18V6H12z"></path>
+              <path fill="currentColor" d="M12 12H18V18H12z"></path>
             </svg>
           </div>
 
@@ -106,6 +108,7 @@ export default function Header() {
                     </svg>
                   </div>
                   <div className="flex flex-row items-center space-x-12">
+                    <ThemeSwitcher />
                     <p
                       className="cursor-pointer hover:underline hover underline-offset-4"
                       onClick={copyMailToClipboard}
@@ -135,7 +138,7 @@ export default function Header() {
                     viewBox="0 0 22 22"
                   >
                     <path
-                      stroke="#000"
+                      stroke="currentColor"
                       strokeWidth="3"
                       d="M2 2l18 18m0-18L2 20"
                     ></path>
@@ -168,6 +171,8 @@ export default function Header() {
                     >
                       mail@erwann.co
                     </p>
+
+                    <ThemeSwitcher />
 
                     <SocialMediaLinks />
                   </div>
