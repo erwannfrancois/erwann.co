@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
@@ -21,10 +22,18 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/rpw3fpi.css" />
       </head>
       <body className="min-h-screen antialiased font-primary md:px-8">
-        {/* HEADER */}
-        <Header />
-        <main>{children}</main>
-        {/* FOOTER */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* HEADER */}
+          <Header />
+          <main>{children}</main>
+          {/* FOOTER */}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

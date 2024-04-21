@@ -1,8 +1,18 @@
 "use client";
 
+import {
+  CardAbout,
+  CardAboutContent,
+  CardAboutDescription,
+  CardAboutHeader,
+  CardAboutImage,
+  CardAboutMain,
+  CardAboutTitle,
+} from "@/components/cards/CardAbout";
 import { Button } from "@/components/ui/button";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
 import Image from "next/image";
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
 export default function Home() {
   return (
@@ -44,12 +54,60 @@ export default function Home() {
       </div>
 
       {/* Scroll text */}
-      <p className="md:text-lg">
+      <p className="text-lg text-center md:text-start md:text-3xl">
         From coding to crafting, and everything in between. <br />
         Get to know me better below.
       </p>
 
       {/* Cards */}
+      <CardAbout bgColor="bg-yellow-200">
+        <CardAboutMain>
+          <CardAboutHeader>
+            <CardAboutTitle>My first marathon</CardAboutTitle>
+            <CardAboutDescription>
+              Back in January, I scored my bib for the Paris 2024 Olympic Games
+              Marathon pour Tous. <br />
+              Now, I&apos;m preparing for the big day on August 10, 2024!
+            </CardAboutDescription>
+          </CardAboutHeader>
+          <CardAboutContent>
+            <Button>
+              <span>Discover the race</span>
+              <LiaLongArrowAltRightSolid className="w-4 h-4" />
+            </Button>
+          </CardAboutContent>
+        </CardAboutMain>
+        <CardAboutImage
+          src="/homepage/Photos/Erwann-Placeholder.avif"
+          alt="Erwann François - Software Engineer"
+        />
+      </CardAbout>
+      <div className="flex flex-col justify-between space-y-6 min-h-[480px] bg-yellow-200 text-black">
+        <div className="p-6 md:p-8 space-y-6">
+          <div className="space-y-4">
+            <h2 className="text-xl font-medium">My first marathon</h2>
+            <p>
+              Back in January, I scored my bib for the Paris 2024 Olympic Games
+              Marathon pour Tous. <br />
+              Now, I&apos;m preparing for the big day on August 10, 2024!
+            </p>
+          </div>
+          <Button>
+            <span>Discover the race</span>
+            <LiaLongArrowAltRightSolid className="w-4 h-4" />
+          </Button>
+        </div>
+        <div className="pr-6 md:pr-8">
+          <Image
+            src="/homepage/Photos/Erwann-Placeholder.avif"
+            alt="Erwann François - Software Engineer"
+            sizes="100vw"
+            width={160}
+            height={90}
+            className="w-full h-auto rounded-se-md"
+          />
+        </div>
+      </div>
     </main>
   );
 }
