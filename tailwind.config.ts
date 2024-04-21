@@ -20,13 +20,13 @@ const config = {
     },
     extend: {
       fontFamily: {
-        primary: ["var(--font-primary)"],
-        secondary: ["var(--font-secondary)"],
+        primary: ["tenon", "sans-serif"],
+        mono: ["antarctican-mono", "sans-serif"],
       },
       fontSize: {
         lg: ["22px", "28px"],
         xl: ["24px", "32px"],
-        display: ["48px", "54px"],
+        display: ["58px", "64px"],
       },
       colors: {
         border: {

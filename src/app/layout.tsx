@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/common/theme/ThemeProvider";
 
-import { fontPrimary } from "@/config/fonts";
+import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
@@ -18,20 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen antialiased font-primary",
-          fontPrimary.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/rpw3fpi.css" />
+      </head>
+      <body className="min-h-screen antialiased font-primary md:px-8">
+        {/* HEADER */}
+        <Header />
+        <main>{children}</main>
+        {/* FOOTER */}
       </body>
     </html>
   );

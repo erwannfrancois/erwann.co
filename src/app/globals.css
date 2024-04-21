@@ -26,14 +26,14 @@
     --surface-default: 0 0 0;
     --surface-inverse: 255 255 255;
     --surface-secondary: 54 54 54;
-    --surface-accent-primary: 238 222 255;
+    --surface-accent-primary: 233 213 255;
     --surface-accent-secondary: 255 224 189;
 
     --foreground-default: 255 255 255;
     --foreground-inverse: 0 0 0;
     --foreground-secondary: 150 150 150;
     --foreground-tertiary: 227 227 227;
-    --foreground-on-accent: 255 255 255;
+    --foreground-on-accent: 0 0 0;
 
     --border: 150 150 150;
     --border-secondary: 227 227 227;
