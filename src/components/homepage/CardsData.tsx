@@ -215,8 +215,8 @@ function ErwannCard() {
           Erwann [erˌwan]
         </h2>
         <p>
-          I&apos;m Erwann François. Pronouncing my first name, Erwann, might
-          pose a challenge, but here&apos;s a tip: think &quot;Air One.&quot;
+          Pronouncing my first name, Erwann, might pose a challenge, but
+          here&apos;s a tip: think &quot;Air One.&quot;
         </p>
       </div>
     </div>

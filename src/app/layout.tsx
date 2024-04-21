@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/common/theme/ThemeProvider";
-import Header from "@/components/common/header/Header";
 
 import { fontPrimary } from "@/config/fonts";
-import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
@@ -32,11 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="flex mx-auto items-center max-w-[1600px] mt-8 md:mt-15 py-2 md:py-3 px-4 md:px-0">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>
