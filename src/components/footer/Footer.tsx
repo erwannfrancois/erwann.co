@@ -6,7 +6,7 @@ import { navigationLinks } from "@/constants/navigation";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 max-w-[1600px] mx-auto px-6 md:px-0 py-6 mt-20">
+    <footer className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 max-w-[1600px] mx-auto mt-20 px-6 md:px-0 py-6">
       <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-20">
         <Link href="/" className="font-medium">
           Erwann François
