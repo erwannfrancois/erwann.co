@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --surface-default: 248 238 233;
+    --surface-default: 255 255 255;
     --surface-inverse: 17 17 17;
     --surface-accent-primary: 254 215 170;
 
@@ -21,7 +21,7 @@
 
   .dark {
     --surface-default: 17 17 17;
-    --surface-inverse: 248 238 233;
+    --surface-inverse: 255 255 255;
     --surface-accent-primary: 233 213 255;
 
     --foreground-default: 255 255 255;
