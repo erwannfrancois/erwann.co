@@ -36,16 +36,12 @@ const config = {
         surface: {
           DEFAULT: "rgb(var(--surface-default) / <alpha-value>)",
           inverse: "rgb(var(--surface-inverse) / <alpha-value>)",
-          secondary: "rgb(var(--surface-secondary) / <alpha-value>)",
           accent_primary: "rgb(var(--surface-accent-primary) / <alpha-value>)",
-          accent_secondary:
-            "rgb(var(--surface-accent-secondary) / <alpha-value>)",
         },
         foreground: {
           DEFAULT: "rgb(var(--foreground-default) / <alpha-value>)",
           inverse: "rgb(var(--foreground-inverse) / <alpha-value>)",
           secondary: "rgb(var(--foreground-secondary) / <alpha-value>)",
-          tertiary: "rgb(var(--foreground-tertiary) / <alpha-value>)",
           on_accent: "rgb(var(--foreground-on-accent) / <alpha-value>)",
         },
       },

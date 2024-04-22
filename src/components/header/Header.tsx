@@ -70,7 +70,7 @@ export default function Header() {
           {isMenuOpen && (
             <div
               ref={menuRef}
-              className="hidden md:block absolute right-0 top-full z-40 bg-surface-accent_primary text-foreground-on_accent rounded-sm mt-4"
+              className="hidden md:block absolute right-0 top-full z-40 bg-surface-accent_primary text-foreground-on_accent rounded-sm mt-4 shadow-lg"
             >
               <div className="flex flex-row space-x-10 px-10 py-8">
                 <nav>
