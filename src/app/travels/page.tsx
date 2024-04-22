@@ -84,7 +84,7 @@ export default function Travels() {
               type="fill"
               source-layer="country_boundaries"
               paint={{
-                "fill-color": "#FF9800",
+                "fill-color": "#8E24AA",
                 "fill-opacity": 0.15,
               }}
               filter={["in", "iso_3166_1", ...countriesVisited]}
