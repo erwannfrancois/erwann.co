@@ -30,7 +30,12 @@ interface SocialMediaLinkProps {
 
 const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ href, icon }) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:opacity-80"
+    >
       {icon}
     </a>
   );

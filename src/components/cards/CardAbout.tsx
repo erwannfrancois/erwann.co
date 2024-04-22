@@ -53,7 +53,7 @@ interface CardAboutDescriptionProps {
 }
 
 function CardAboutDescription({ children }: CardAboutDescriptionProps) {
-  return <p>{children}</p>;
+  return <div className="space-y-4">{children}</div>;
 }
 
 // Content
@@ -62,7 +62,7 @@ interface CardAboutContentProps {
 }
 
 function CardAboutContent({ children }: CardAboutContentProps) {
-  return <div>{children}</div>;
+  return <div className="space-y-3">{children}</div>;
 }
 
 // Image
