@@ -37,7 +37,7 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-30">
+    <header className="sticky top-0 left-0 right-0 z-40">
       {/* Wrapper */}
       <div className="flex flex-row items-center justify-between max-w-[1600px] mx-auto py-6 px-6 md:px-0 relative">
         {/* Left container */}
