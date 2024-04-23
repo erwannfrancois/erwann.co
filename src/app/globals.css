@@ -44,3 +44,20 @@
     @apply bg-surface text-foreground;
   }
 }
+
+.pin-city {
+  @apply bg-emerald-500/30;
+  @apply border-emerald-500/60;
+}
+.pin-landmark {
+  @apply bg-indigo-500/30;
+  @apply border-indigo-500/60;
+}
+.pin-gem {
+  @apply bg-yellow-500/30;
+  @apply border-yellow-500/60;
+}
+
+.mapboxgl-popup-content {
+  padding-bottom: 10px !important;
+}
