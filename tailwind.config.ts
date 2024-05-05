@@ -26,7 +26,7 @@ const config = {
       fontSize: {
         lg: ["22px", "28px"],
         xl: ["24px", "32px"],
-        display: ["58px", "64px"],
+        display: ["40px", "48px"],
       },
       colors: {
         border: {
