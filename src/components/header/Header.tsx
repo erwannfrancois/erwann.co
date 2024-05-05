@@ -42,7 +42,10 @@ export default function Header() {
       <div className="flex flex-row items-center justify-between max-w-[1600px] mx-auto py-6 px-6 md:px-0 relative">
         {/* Left container */}
         <div className="flex flex-row space-x-4">
-          <Link href="/" className="font-medium">
+          <Link
+            href="/"
+            className="font-medium hover:underline hover:underline-offset-4"
+          >
             Erwann François
           </Link>
           <p>Available for hire</p>
