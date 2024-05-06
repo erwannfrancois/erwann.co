@@ -1,6 +1,5 @@
 "use client";
 
-import { cardsData } from "@/components/cards/CardsAboutData";
 import { Button } from "@/components/ui/button";
 import { activities, occupations } from "@/constants/occupations";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
@@ -13,10 +12,8 @@ import {
 } from "react-icons/lia";
 
 export default function Home() {
-  //Cards
-
   return (
-    <main className="max-w-[1600px] mx-auto px-6 md:px-0 space-y-16 md:space-y-32">
+    <main className="max-w-[1600px] mx-auto px-6 md:px-0 space-y-16 md:space-y-52">
       {/* Hero header */}
 
       <div className="flex flex-col justify-start space-y-14 mt-8">
@@ -59,7 +56,7 @@ export default function Home() {
           </div>
         </div>
         {/* About me and scroll */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-end text-foreground-secondary">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-end text-foreground-secondary border-border-secondary">
           <div className="flex flex-col justify-start w-full col-span-1 border-t">
             {occupations.map((occupation) => (
               <p key={occupation} className="w-full py-3 border-b">
@@ -68,9 +65,9 @@ export default function Home() {
             ))}
           </div>
           <div className="flex flex-row items-center justify-end col-span-1 col-start-5 space-x-2">
-            <LiaLongArrowAltDownSolid className="w-4 h-4" />
+            <LiaLongArrowAltDownSolid className="w-4 h-4 animate-bounce" />
             <span className="font-mono uppercase text-sm">Scroll down</span>
-            <LiaLongArrowAltDownSolid className="w-4 h-4" />
+            <LiaLongArrowAltDownSolid className="w-4 h-4 animate-bounce" />
           </div>
         </div>
       </div>
@@ -95,9 +92,9 @@ export default function Home() {
                 </h2>
                 <div className="flex flex-col space-y-2">
                   <p>
-                    Combining my skills as both a designer and a full-stack
-                    software engineer, I bring a unique perspective to every
-                    project I undertake.
+                    Bringing together a fusion of full-stack software
+                    engineering and design, I bring a unique perspective to
+                    every project I am part of.
                   </p>
                   <p>
                     With a foundation in Microsoft technologies like C#, ASP.NET
@@ -129,7 +126,7 @@ export default function Home() {
             </div>
 
             {/* Divider Vertical */}
-            <div className="bg-gray-200 w-px mx-12"></div>
+            <div className="bg-surface-inverse/50 w-px mx-12"></div>
 
             {/* Recent Travels */}
             <div className="flex flex-col justify-between w-1/2 space-y-8">
@@ -139,8 +136,14 @@ export default function Home() {
                 </h2>
                 <div className="flex flex-col space-y-2">
                   <p>
-                    During the summer of 2023, I embarked on a month-long
-                    journey to Kazakhstan and Kyrgyzstan.
+                    An avid explorer, I&apos;ve traversed diverse landscapes and
+                    immersed myself in countless cultures. With solo backpacking
+                    and shared adventures with friends and family, I&apos;ve
+                    wandered through over 35 countries across every continent.
+                  </p>
+                  <p>
+                    Most recently, during the summer of 2023, I embarked on a
+                    month-long journey to Kazakhstan and Kyrgyzstan.
                   </p>
                   <p>
                     From breathtaking lakes nestled at 3000m to unforgettable
@@ -155,7 +158,7 @@ export default function Home() {
                     href="/travels"
                     className="w-full flex flex-row items-center justify-between"
                   >
-                    <span>To the map of my travels</span>
+                    <span>Explore all my travels</span>
                     <LiaLongArrowAltRightSolid className="w-5 h-5" />
                   </Link>
                 </Button>
@@ -164,7 +167,7 @@ export default function Home() {
           </div>
 
           {/* Divider Horizontal */}
-          <div className="bg-gray-200 h-px my-12"></div>
+          <div className="bg-surface-inverse/50 h-px my-12"></div>
 
           {/* Bottom */}
           <div className="flex flex-row space-x-24">
@@ -175,20 +178,37 @@ export default function Home() {
                 </h2>
                 <div className="flex flex-col space-y-2">
                   <p>
-                    Back in January, I scored my bib for the Paris 2024 Olympic
-                    Games Marathon pour Tous. Now, I&apos;m preparing for the
-                    big day on August 10, 2024!
+                    Sports have always been a cornerstone of my life, whether
+                    I&apos;m cheering from the sidelines or pushing my own
+                    limits in competition. From the thrill of handball matches
+                    to the intensity of Crossfit sessions, and extending to
+                    activities such as horse riding or boxing, I&apos;ve
+                    embraced a wide array of athletic disciplines.
+                  </p>
+                  <p>
+                    Currently, I&apos;m immersed in training for my debut
+                    triathlon, balancing swimming, road biking, and running as I
+                    gear up for the challenge.
+                  </p>
+                  <p>
+                    Amidst this journey, I&apos;ve also secured my bib for the
+                    Paris 2024 Olympic Games Marathon pour Tous, marking a
+                    significant milestone in my athletic pursuits. As for many
+                    athletes, taking part in the Olympic Games is a dream, even
+                    if it&apos;s only in the <i>for all</i> event. <br />
+                    With the big day on August 10, 2024, I&apos;m laser-focused
+                    on training and setting my first time on this distance.
                   </p>
                 </div>
               </div>
               <div className="mt-auto">
                 <Button className="w-full">
                   <a
-                    href="#"
+                    href="https://marathonpourtous.paris2024.org/fr/infos-pratiques/parcours"
                     target="_blank"
                     className="w-full flex flex-row items-center justify-between"
                   >
-                    <span>Download my CV</span>
+                    <span>Meet the race</span>
                     <LiaLongArrowAltRightSolid className="w-5 h-5" />
                   </a>
                 </Button>
@@ -211,7 +231,7 @@ export default function Home() {
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="flex flex-row items-center space-x-8 font-mono text-base uppercase font-medium text-foreground-secondary"
+              className="flex flex-row items-center space-x-8 font-mono text-base uppercase font-medium text-foreground-primary"
             >
               <span>{activity}</span>
               {index !== activities.length - 1 && <span>/</span>}
@@ -219,6 +239,55 @@ export default function Home() {
           ))}
         </div>
         {/* Ongoing Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+          <div className="flex flex-row items-baseline col-span-1 space-x-3 font-mono uppercase font-medium leading-loose">
+            <div className="w-3 h-3 rounded-full bg-surface-inverse" />
+            <span>Ongoing projects</span>
+          </div>
+          <div className="flex flex-col space-y-12 col-span-2 p-8 rounded-sm bg-white text-black">
+            <div>
+              <h2 className="text-2xl font-mono uppercase font-medium">
+                Embark
+              </h2>
+              <div></div>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <p>
+                I&apos;m currently developing Embark, a versatile project
+                management solution designed specifically for small companies
+                and freelancers.
+              </p>
+              <p>
+                This tool covers everything from client to finance management,
+                empowering entrepreneurs to efficiently oversee their
+                operations. Additionally, it will feature a project portal
+                enabling clients to track project progress and access all
+                necessary documents shared by the entrepreneurs.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-12 col-span-2 p-8 rounded-sm bg-white text-black">
+            <div>
+              <h2 className="text-2xl font-mono uppercase font-medium">
+                EF Type Foundry
+              </h2>
+              <div></div>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <p>
+                Balancing my roles as a software engineer and designer,
+                I&apos;ve explored diverse design avenues, ranging from graphic
+                design to UI/UX design.
+              </p>
+              <p>
+                I&apos;m deeply fascinated by typography and have embarked on
+                creating custom typefaces. EF Type will serve as my type foundry
+                e-commerce platform, where I&apos;ll display and retail the
+                fonts I&apos;ve crafted.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );

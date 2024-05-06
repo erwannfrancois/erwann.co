@@ -4,33 +4,37 @@
 
 @layer base {
   :root {
-    --surface-default: 255 255 255;
+    --surface-default: 246 246 246;
     --surface-inverse: 17 17 17;
-    --surface-accent-primary: 254 215 170;
+    --surface-primary: 52 79 204;
 
     --foreground-default: 0 0 0;
     --foreground-inverse: 255 255 255;
-    --foreground-secondary: 68 68 68;
-    --foreground-on-accent: 0 0 0;
+    --foreground-secondary: 78 78 78;
+    --foreground-primary: 52 79 204;
+    --foreground-on-primary: 255 255 255;
 
     --border: 141 141 141;
-    --border-secondary: 74 74 74;
+    --border-primary: 52 79 204;
+    --border-secondary: 78 78 78;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --surface-default: 17 17 17;
-    --surface-inverse: 255 255 255;
-    --surface-accent-primary: 233 213 255;
+    --surface-default: 246 246 246;
+    --surface-inverse: 17 17 17;
+    --surface-primary: 52 79 204;
 
-    --foreground-default: 255 255 255;
-    --foreground-inverse: 0 0 0;
-    --foreground-secondary: 150 150 150;
-    --foreground-on-accent: 0 0 0;
+    --foreground-default: 0 0 0;
+    --foreground-inverse: 255 255 255;
+    --foreground-secondary: 68 68 68;
+    --foreground-primary: 52 79 204;
+    --foreground-on-primary: 0 0 0;
 
-    --border: 150 150 150;
-    --border-secondary: 227 227 227;
+    --border: 141 141 141;
+    --border-primary: 52 79 204;
+    --border-secondary: 74 74 74;
 
     --radius: 0.5rem;
   }

@@ -32,17 +32,19 @@ const config = {
         border: {
           DEFAULT: "rgb(var(--border) / <alpha-value>)",
           secondary: "rgb(var(--border-secondary) / <alpha-value>)",
+          primary: "rgb(var(--border-primary) / <alpha-value>)",
         },
         surface: {
           DEFAULT: "rgb(var(--surface-default) / <alpha-value>)",
           inverse: "rgb(var(--surface-inverse) / <alpha-value>)",
-          accent_primary: "rgb(var(--surface-accent-primary) / <alpha-value>)",
+          primary: "rgb(var(--surface-primary) / <alpha-value>)",
         },
         foreground: {
           DEFAULT: "rgb(var(--foreground-default) / <alpha-value>)",
           inverse: "rgb(var(--foreground-inverse) / <alpha-value>)",
           secondary: "rgb(var(--foreground-secondary) / <alpha-value>)",
-          on_accent: "rgb(var(--foreground-on-accent) / <alpha-value>)",
+          primary: "rgb(var(--foreground-primary) / <alpha-value>)",
+          on_primary: "rgb(var(--foreground-on-primary) / <alpha-value>)",
         },
       },
       borderRadius: {
