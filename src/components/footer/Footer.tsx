@@ -1,13 +1,14 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import SocialMediaLinks from "../socials/SocialLinks";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
-import { navigationLinks } from "@/constants/navigation";
+import { useTheme } from "next-themes";
 
 export default function Footer() {
+  const { theme } = useTheme();
+
   return (
-    <footer className="max-w-[1600px] mx-auto flex flex-row justify-between items-end font-mono uppercase mt-40 mb-4">
+    <footer className="max-w-[1600px] mx-auto flex flex-row justify-between items-end text-sm font-mono font-medium uppercase mt-40 mb-4">
       {/* Copyright */}
       <div>
         © Copyright Erwann François {new Date().getFullYear()}, All rights
@@ -16,19 +17,31 @@ export default function Footer() {
 
       {/* Right part */}
       <div className="flex flex-col items-end space-y-2">
-        {/* GIF */}
-        <div>
-          <Image
-            src="/homepage/Photos/Succession.gif"
-            alt="Succession GIF High Five"
-            sizes="100vw"
-            width={160}
-            height={90}
-            className="rounded-sm w-auto h-24"
-          />
-        </div>
         {/* Thanks */}
         <p>Thank you for being here!</p>
+        {/* GIF */}
+        <div>
+          {theme === "dark" ? (
+            <Image
+              src="/homepage/Photos/Succession.gif"
+              alt="Succession GIF High Five"
+              sizes="100vw"
+              width={160}
+              height={90}
+              className="rounded-sm w-auto h-32"
+            />
+          ) : (
+            <Image
+              src="/homepage/Photos/TheOffice.gif"
+              alt="The Office GIF High Five"
+              sizes="100vw"
+              width={160}
+              height={90}
+              className="rounded-sm w-auto h-32"
+            />
+          )}
+        </div>
+
         {/* Mail + Socials */}
         <div className="flex flex-row items-center gap-6">
           <p

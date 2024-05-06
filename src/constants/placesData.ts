@@ -1,3 +1,4 @@
+// 37 countries
 export const countriesVisited = [
   "DE",
   "AD",

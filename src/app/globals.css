@@ -22,19 +22,19 @@
   }
 
   .dark {
-    --surface-default: 246 246 246;
-    --surface-inverse: 17 17 17;
+    --surface-default: 8 9 11;
+    --surface-inverse: 246 246 246;
     --surface-primary: 52 79 204;
 
-    --foreground-default: 0 0 0;
-    --foreground-inverse: 255 255 255;
-    --foreground-secondary: 68 68 68;
+    --foreground-default: 255 255 255;
+    --foreground-inverse: 0 0 0;
+    --foreground-secondary: 234 237 255;
     --foreground-primary: 52 79 204;
-    --foreground-on-primary: 0 0 0;
+    --foreground-on-primary: 255 255 255;
 
-    --border: 141 141 141;
+    --border: 255 255 255;
     --border-primary: 52 79 204;
-    --border-secondary: 74 74 74;
+    --border-secondary: 234 237 255;
 
     --radius: 0.5rem;
   }

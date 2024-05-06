@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { activities, occupations } from "@/constants/occupations";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
@@ -231,7 +232,7 @@ export default function Home() {
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="flex flex-row items-center space-x-8 font-mono text-base uppercase font-medium text-foreground-primary"
+              className="flex flex-row items-center space-x-8 font-mono text-base uppercase font-medium text-foreground-primary dark:text-foreground"
             >
               <span>{activity}</span>
               {index !== activities.length - 1 && <span>/</span>}
@@ -245,11 +246,15 @@ export default function Home() {
             <span>Ongoing projects</span>
           </div>
           <div className="flex flex-col space-y-12 col-span-2 p-8 rounded-sm bg-white text-black">
-            <div>
+            <div className="flex flex-col space-y-2">
               <h2 className="text-2xl font-mono uppercase font-medium">
                 Embark
               </h2>
-              <div></div>
+              <div className="flex flex-row space-x-2">
+                <Badge>SAAS</Badge>
+                <Badge>Productivity</Badge>
+                <Badge variant="primary">Coming soon</Badge>
+              </div>
             </div>
             <div className="flex flex-col space-y-2">
               <p>
@@ -267,11 +272,14 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col space-y-12 col-span-2 p-8 rounded-sm bg-white text-black">
-            <div>
+            <div className="flex flex-col space-y-2">
               <h2 className="text-2xl font-mono uppercase font-medium">
                 EF Type Foundry
               </h2>
-              <div></div>
+              <div className="flex flex-row space-x-2">
+                <Badge>Type Design</Badge>
+                <Badge>E-Commerce</Badge>
+              </div>
             </div>
             <div className="flex flex-col space-y-2">
               <p>
