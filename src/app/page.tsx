@@ -20,7 +20,7 @@ export default function Home() {
       <div className="flex flex-col justify-start space-y-14 mt-8">
         {/* Heading text */}
         <div className="md:max-w-[50%]">
-          <h1 className="text-3xl md:text-display font-medium">
+          <h1 className="text-3xl md:text-display">
             I&apos;m Erwann, a product-centred full-stack software engineer with
             a love for exploration both in code and in life.
           </h1>

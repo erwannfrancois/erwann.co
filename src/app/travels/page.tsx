@@ -162,12 +162,12 @@ export default function Travels() {
         </Map>
       </div>
       <div className="max-w-[1600px] mx-auto px-6 md:px-0  flex justify-start">
-        <div className="flex flex-col font-mono space-y-6 text-sm uppercase bg-surface/60 p-4 rounded-sm relative z-30 shadow-sm">
+        <div className="flex flex-col font-mono space-y-6 text-sm uppercase bg-surface/60 p-4 rounded-sm relative z-30 border border-border-primary">
           <div
             onClick={toggleContent}
             className="flex flex-row items-center space-x-8 justify-between cursor-pointer"
           >
-            <span>{isOpen ? "Hide " : "Display "}the map legend </span>
+            <span>{isOpen ? "Hide " : "Display "} map legend </span>
             {isOpen ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
           </div>
           {isOpen && (
