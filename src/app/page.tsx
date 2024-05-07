@@ -20,15 +20,15 @@ export default function Home() {
       <div className="flex flex-col justify-start space-y-14 mt-8">
         {/* Heading text */}
         <div className="md:max-w-[50%]">
-          <h1 className="text-2xl md:text-display font-medium">
+          <h1 className="text-3xl md:text-display font-medium">
             I&apos;m Erwann, a product-centred full-stack software engineer with
             a love for exploration both in code and in life.
           </h1>
         </div>
         {/* Occupation and picture */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
-          <div className="flex flex-col justify-start col-start-2 col-span-1 space-y-6">
-            <p className="text-lg">
+          <div className="flex flex-col justify-start md:col-start-2 col-span-1 space-y-6">
+            <p className="md:text-lg">
               Currently seeking full-time contract opportunities as a software
               engineer, I&apos;m excited to contribute my expertise to dynamic
               projects.
@@ -65,7 +65,7 @@ export default function Home() {
               </p>
             ))}
           </div>
-          <div className="flex flex-row items-center justify-end col-span-1 col-start-5 space-x-2">
+          <div className="flex flex-row items-center md:justify-end col-span-1 md:col-start-5 space-x-2">
             <LiaLongArrowAltDownSolid className="w-4 h-4 animate-bounce" />
             <span className="font-mono uppercase text-sm">Scroll down</span>
             <LiaLongArrowAltDownSolid className="w-4 h-4 animate-bounce" />
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col space-y-52">
+      <div className="flex flex-col space-y-24 md:space-y-52">
         {/* Opener */}
         <div className="flex md:justify-end w-full text-lg">
           <p>
@@ -84,9 +84,9 @@ export default function Home() {
         {/* Sections */}
         <div>
           {/* Top */}
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row md:justify-between space-y-16 md:space-y-0">
             {/* Career & Experience */}
-            <div className="flex flex-col justify-between w-1/2 space-y-8">
+            <div className="flex flex-col justify-between md:w-1/2 space-y-8">
               <div className="flex flex-col space-y-4">
                 <h2 className="text-2xl font-mono font-medium uppercase">
                   Career & Experience
@@ -127,10 +127,10 @@ export default function Home() {
             </div>
 
             {/* Divider Vertical */}
-            <div className="bg-surface-inverse/50 w-px mx-12"></div>
+            <div className="bg-surface-inverse/50 h-px md:h-auto md:w-px my-12 md:mx-12"></div>
 
             {/* Recent Travels */}
-            <div className="flex flex-col justify-between w-1/2 space-y-8">
+            <div className="flex flex-col justify-between md:w-1/2 space-y-8">
               <div className="flex flex-col space-y-4">
                 <h2 className="text-2xl font-mono font-medium uppercase">
                   Recent Travels
@@ -171,8 +171,8 @@ export default function Home() {
           <div className="bg-surface-inverse/50 h-px my-12"></div>
 
           {/* Bottom */}
-          <div className="flex flex-row space-x-24">
-            <div className="flex flex-col justify-between w-1/2 space-y-8">
+          <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-24">
+            <div className="flex flex-col justify-between md:w-1/2 space-y-8">
               <div className="flex flex-col space-y-4">
                 <h2 className="text-2xl font-mono font-medium uppercase">
                   My first Marathon
@@ -215,7 +215,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <Image
                 src="/homepage/Photos/MPTParis2024.jpg"
                 alt="Marathon pour Tous - Paris 2024"
@@ -228,7 +228,7 @@ export default function Home() {
           </div>
         </div>
         {/* Activities */}
-        <div className="flex flex-row space-x-8 w-full justify-center">
+        <div className="hidden md:flex flex-row space-x-8 w-full justify-center">
           {activities.map((activity, index) => (
             <div
               key={index}
@@ -240,17 +240,17 @@ export default function Home() {
           ))}
         </div>
         {/* Ongoing Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12">
           <div className="flex flex-row items-baseline col-span-1 space-x-3 font-mono uppercase font-medium leading-loose">
             <div className="w-3 h-3 rounded-full bg-surface-inverse" />
             <span>Ongoing projects</span>
           </div>
-          <div className="flex flex-col space-y-12 col-span-2 p-8 rounded-sm bg-white text-black">
+          <div className="flex flex-col space-y-8 col-span-2 p-6 md:p-8 rounded-sm bg-white text-black">
             <div className="flex flex-col space-y-2">
               <h2 className="text-2xl font-mono uppercase font-medium">
                 Embark
               </h2>
-              <div className="flex flex-row space-x-2">
+              <div className="flex flex-wrap md:flex-row gap-1 md:space-x-2">
                 <Badge>SAAS</Badge>
                 <Badge>Productivity</Badge>
                 <Badge variant="primary">Coming soon</Badge>
@@ -271,12 +271,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-12 col-span-2 p-8 rounded-sm bg-white text-black">
+          <div className="flex flex-col space-y-8 col-span-2 p-6 md:p-8 rounded-sm bg-white text-black">
             <div className="flex flex-col space-y-2">
               <h2 className="text-2xl font-mono uppercase font-medium">
                 EF Type Foundry
               </h2>
-              <div className="flex flex-row space-x-2">
+              <div className="flex flex-wrap md:flex-row gap-1 md:space-x-2">
                 <Badge>Type Design</Badge>
                 <Badge>E-Commerce</Badge>
               </div>

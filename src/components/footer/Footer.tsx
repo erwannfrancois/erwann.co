@@ -8,15 +8,15 @@ export default function Footer() {
   const { theme } = useTheme();
 
   return (
-    <footer className="max-w-[1600px] mx-auto flex flex-row justify-between items-end text-sm font-mono font-medium uppercase mt-40 mb-4">
+    <footer className="max-w-[1600px] px-6 md:px-0 mx-auto flex flex-col md:flex-row md:justify-between md:items-end gap-4 text-sm font-mono font-medium uppercase mt-40 mb-4">
       {/* Copyright */}
-      <div>
+      <div className="order-2 md:order-1">
         © Copyright Erwann François {new Date().getFullYear()}, All rights
         reserved
       </div>
 
       {/* Right part */}
-      <div className="flex flex-col items-end space-y-2">
+      <div className="flex flex-col md:items-end space-y-4 order-1">
         {/* Thanks */}
         <p>Thank you for being here!</p>
         {/* GIF */}
