@@ -15,6 +15,10 @@ export default function Header() {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="relative z-40">
       <div className="max-w-[1600px] mx-auto py-4 px-6 md:px-0">
@@ -23,6 +27,7 @@ export default function Header() {
             <Link
               href="/"
               className="font-medium hover:underline hover:underline-offset-4"
+              onClick={closeMenu}
             >
               Erwann François
             </Link>
@@ -49,6 +54,7 @@ export default function Header() {
                     <li
                       key={link.href}
                       className="hover:underline hover:underline-offset-4"
+                      onClick={closeMenu}
                     >
                       <Link href={link.href} className="whitespace-nowrap">
                         {link.label}

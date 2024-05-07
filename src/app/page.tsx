@@ -84,7 +84,7 @@ export default function Home() {
         {/* Sections */}
         <div>
           {/* Top */}
-          <div className="flex flex-col md:flex-row md:justify-between space-y-16 md:space-y-0">
+          <div className="flex flex-col md:flex-row md:justify-between space-y-12 md:space-y-0">
             {/* Career & Experience */}
             <div className="flex flex-col justify-between md:w-1/2 space-y-8">
               <div className="flex flex-col space-y-4">
