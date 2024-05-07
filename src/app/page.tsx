@@ -6,6 +6,7 @@ import { activities, occupations } from "@/constants/occupations";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import {
   LiaCopySolid,
   LiaLongArrowAltDownSolid,
@@ -13,6 +14,17 @@ import {
 } from "react-icons/lia";
 
 export default function Home() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = () => {
+    copyMailToClipboard();
+    setIsCopied(true);
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 500);
+  };
+
   return (
     <main className="max-w-[1600px] mx-auto px-6 md:px-0 space-y-16 md:space-y-52">
       {/* Hero header */}
@@ -35,14 +47,18 @@ export default function Home() {
             </p>
             <Button
               variant="primary"
-              onClick={copyMailToClipboard}
+              onClick={handleCopy}
               className="w-full md:w-auto"
             >
               <span>mail@erwann.co</span>
-              <div className="flex flex-row items-center space-x-2">
-                <span>Click to copy</span>
-                <LiaCopySolid className="w-5 h-5" />
-              </div>
+              {!isCopied ? (
+                <div className="flex flex-row items-center space-x-2">
+                  <span>Click to copy</span>
+                  <LiaCopySolid className="w-5 h-5" />
+                </div>
+              ) : (
+                <span>Copied!</span>
+              )}
             </Button>
           </div>
           <div className="col-span-1">
@@ -57,10 +73,13 @@ export default function Home() {
           </div>
         </div>
         {/* About me and scroll */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-end text-foreground-secondary border-border-secondary">
-          <div className="flex flex-col justify-start w-full col-span-1 border-t">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-end text-foreground-secondary">
+          <div className="flex flex-col justify-start w-full col-span-1 border-t border-border-secondary">
             {occupations.map((occupation) => (
-              <p key={occupation} className="w-full py-3 border-b">
+              <p
+                key={occupation}
+                className="w-full py-3 border-b border-border-secondary"
+              >
                 {occupation}
               </p>
             ))}
@@ -89,7 +108,7 @@ export default function Home() {
             <div className="flex flex-col justify-between md:w-1/2 space-y-8">
               <div className="flex flex-col space-y-4">
                 <h2 className="text-2xl font-mono font-medium uppercase">
-                  Career & Experience
+                  Professional Journey
                 </h2>
                 <div className="flex flex-col space-y-2">
                   <p>

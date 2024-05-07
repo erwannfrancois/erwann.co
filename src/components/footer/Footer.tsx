@@ -3,9 +3,23 @@ import Image from "next/image";
 import SocialMediaLinks from "../socials/SocialLinks";
 import { copyMailToClipboard } from "@/lib/utilsInterface";
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 export default function Footer() {
   const { theme } = useTheme();
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = () => {
+    copyMailToClipboard();
+    setIsCopied(true);
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 500);
+  };
 
   return (
     <footer className="max-w-[1600px] px-6 md:px-0 mx-auto flex flex-col md:flex-row md:justify-between md:items-end gap-4 text-sm font-mono font-medium uppercase mt-40 mb-4">
@@ -45,10 +59,16 @@ export default function Footer() {
         {/* Mail + Socials */}
         <div className="flex flex-row items-center gap-6">
           <p
-            className="cursor-pointer hover:underline hover underline-offset-4"
-            onClick={copyMailToClipboard}
+            className="hover:underline hover:underline-offset-4 cursor-pointer"
+            onClick={handleCopy}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
           >
-            mail@erwann.co
+            {isCopied
+              ? "Copied!"
+              : isHovering
+              ? "Click to copy"
+              : "mail@erwann.co"}
           </p>
           <SocialMediaLinks />
         </div>

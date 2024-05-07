@@ -11,6 +11,19 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [isHovering, setIsHovering] = useState(false);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = () => {
+    copyMailToClipboard();
+    setIsCopied(true);
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 500);
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -66,10 +79,16 @@ export default function Header() {
               <div className="flex flex-row space-x-20">
                 <ThemeSwitcher />
                 <p
-                  className="cursor-pointer hover:underline hover underline-offset-4"
-                  onClick={copyMailToClipboard}
+                  className="hover:underline hover:underline-offset-4 cursor-pointer"
+                  onClick={handleCopy}
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
                 >
-                  mail@erwann.co
+                  {isCopied
+                    ? "Copied!"
+                    : isHovering
+                    ? "Click to copy"
+                    : "mail@erwann.co"}
                 </p>
               </div>
             </div>
