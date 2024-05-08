@@ -4,33 +4,37 @@
 
 @layer base {
   :root {
-    --surface-default: 255 255 255;
+    --surface-default: 246 246 246;
     --surface-inverse: 17 17 17;
-    --surface-accent-primary: 254 215 170;
+    --surface-primary: 52 79 204;
 
     --foreground-default: 0 0 0;
     --foreground-inverse: 255 255 255;
-    --foreground-secondary: 68 68 68;
-    --foreground-on-accent: 0 0 0;
+    --foreground-secondary: 87 87 87;
+    --foreground-primary: 52 79 204;
+    --foreground-on-primary: 255 255 255;
 
     --border: 141 141 141;
-    --border-secondary: 74 74 74;
+    --border-primary: 52 79 204;
+    --border-secondary: 87 87 87;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --surface-default: 17 17 17;
-    --surface-inverse: 255 255 255;
-    --surface-accent-primary: 233 213 255;
+    --surface-default: 18 18 18;
+    --surface-inverse: 246 246 246;
+    --surface-primary: 250 190 102;
 
     --foreground-default: 255 255 255;
     --foreground-inverse: 0 0 0;
-    --foreground-secondary: 150 150 150;
-    --foreground-on-accent: 0 0 0;
+    --foreground-secondary: 194 194 194;
+    --foreground-primary: 250 190 102;
+    --foreground-on-primary: 255 255 255;
 
-    --border: 150 150 150;
-    --border-secondary: 227 227 227;
+    --border: 246 246 246;
+    --border-primary: 250 190 102;
+    --border-secondary: 194 194 194;
 
     --radius: 0.5rem;
   }
@@ -43,6 +47,14 @@
   body {
     @apply bg-surface text-foreground;
   }
+}
+
+h2 {
+  @apply text-foreground-secondary font-mono font-medium uppercase text-sm;
+}
+
+h3 {
+  @apply font-medium;
 }
 
 .pin-city {
@@ -60,4 +72,20 @@
 
 .mapboxgl-popup-content {
   padding-bottom: 10px !important;
+}
+
+.header-highlight {
+  @apply text-foreground font-normal;
+}
+
+.link {
+  @apply flex flex-row items-center space-x-2 text-foreground-primary font-normal border-b border-border-primary w-max hover:font-medium;
+}
+
+.right-col {
+  @apply md:w-[400px];
+}
+
+.home-paragraph {
+  @apply flex flex-col flex-1 space-y-4 leading-snug;
 }

@@ -20,11 +20,8 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <div
-      className="flex items-center space-x-2 cursor-pointer"
-      onClick={toggleTheme}
-    >
-      <div className="w-3 h-3 bg-black"></div>
+    <div className="cursor-pointer w-min" onClick={toggleTheme}>
+      <div className="w-3 h-3 bg-surface-inverse" />
     </div>
   );
 }

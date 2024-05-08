@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
@@ -21,18 +20,16 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rpw3fpi.css" />
       </head>
-      <body className="min-h-screen antialiased font-primary md:px-8">
+      <body className="min-h-screen antialiased flex flex-col font-primary font-light md:px-8">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           {/* HEADER */}
           <Header />
-          <main>{children}</main>
-          {/* FOOTER */}
-          <Footer />
+          <main className="flex-grow flex flex-col">{children}</main>
         </ThemeProvider>
       </body>
     </html>
