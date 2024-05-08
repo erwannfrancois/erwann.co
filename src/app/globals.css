@@ -49,6 +49,14 @@
   }
 }
 
+h2 {
+  @apply text-foreground-secondary font-mono font-medium uppercase text-sm;
+}
+
+h3 {
+  @apply font-medium;
+}
+
 .pin-city {
   @apply bg-emerald-500/30;
   @apply border-emerald-500/60;
@@ -70,14 +78,14 @@
   @apply text-foreground font-normal;
 }
 
-h2 {
-  @apply text-foreground-secondary font-mono font-medium uppercase text-sm;
-}
-
-h3 {
-  @apply font-medium;
-}
-
 .link {
-  @apply flex flex-row items-center space-x-2 text-foreground-primary font-normal border-b border-border-primary w-max hover:font-medium hover:border-b-2;
+  @apply flex flex-row items-center space-x-2 text-foreground-primary font-normal border-b border-border-primary w-max hover:font-medium;
+}
+
+.right-col {
+  @apply md:w-[400px];
+}
+
+.home-paragraph {
+  @apply flex flex-col flex-1 space-y-4 leading-snug;
 }

@@ -40,10 +40,10 @@ export default function Header() {
 
               <span>Erwann François</span>
             </Link>
-            <span className="font-light">Available for hire</span>
+            <span>Available for hire</span>
           </div>
           {/* Right part */}
-          <nav className="md:w-[400px]">
+          <nav className="right-col">
             <ul className="flex flex-row space-x-6">
               {navigationLinks.map((link) => (
                 <li

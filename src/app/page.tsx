@@ -52,7 +52,7 @@ export default function Home() {
           </div>
         </div>
         {/* Right part */}
-        <div className="md:w-[400px] flex flex-col space-y-10">
+        <div className="right-col flex flex-col space-y-10">
           <div className="flex flex-col space-y-2">
             <h2>Contact</h2>
             <div className="flex flex-col space-y-2">
@@ -102,7 +102,7 @@ export default function Home() {
         {/* Left part */}
         <div className="flex-1 flex flex-col justify-between space-y-12">
           <div className="flex flex-col md:flex-row gap-10">
-            <div className="flex flex-col flex-1 space-y-4 leading-snug">
+            <div className="home-paragraph">
               <p>
                 From handball matches to horse riding through Crossfit sessions,
                 I&apos;ve embraced a wide array of athletic disciplines. <br />
@@ -120,7 +120,7 @@ export default function Home() {
                 <LiaLongArrowAltRightSolid className="w-5 h-5" />
               </a>
             </div>
-            <div className="flex flex-col flex-1 space-y-4 leading-snug">
+            <div className="home-paragraph">
               <p>
                 I love exploring — I&apos;ve journeyed through diverse
                 landscapes and cultures across 35 countries on every continent.
@@ -141,7 +141,7 @@ export default function Home() {
           </p>
         </div>
         {/* Right part */}
-        <div className="md:w-[400px] flex flex-col justify-between items-end space-y-12">
+        <div className="right-col flex flex-col justify-between items-end space-y-12">
           <div>
             <Image
               src="/homepage/Photos/Erwann.jpeg"
