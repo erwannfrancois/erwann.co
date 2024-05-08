@@ -1,6 +1,12 @@
-import { SiLinkedin, SiGithub, SiStrava, SiGoodreads } from "react-icons/si";
+import {
+  SiLinkedin,
+  SiGithub,
+  SiStrava,
+  SiGoodreads,
+  SiMedium,
+} from "react-icons/si";
 
-const SocialMediaLinks = () => {
+const SocialLinks = () => {
   return (
     <div className="flex flex-row space-x-6">
       <SocialMediaLink
@@ -11,13 +17,15 @@ const SocialMediaLinks = () => {
         href="https://github.com/erwannfrancois"
         icon={<SiGithub />}
       />
-      <SocialMediaLink
-        href="https://www.strava.com/athletes/erwannfrancois"
-        icon={<SiStrava />}
-      />
+      <SocialMediaLink href="https://www.medium.com" icon={<SiMedium />} />
+
       <SocialMediaLink
         href="https://www.goodreads.com/erwannfrancois"
         icon={<SiGoodreads />}
+      />
+      <SocialMediaLink
+        href="https://www.strava.com/athletes/erwannfrancois"
+        icon={<SiStrava />}
       />
     </div>
   );
@@ -41,4 +49,4 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ href, icon }) => {
   );
 };
 
-export default SocialMediaLinks;
+export default SocialLinks;

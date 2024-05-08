@@ -10,31 +10,31 @@
 
     --foreground-default: 0 0 0;
     --foreground-inverse: 255 255 255;
-    --foreground-secondary: 78 78 78;
+    --foreground-secondary: 87 87 87;
     --foreground-primary: 52 79 204;
     --foreground-on-primary: 255 255 255;
 
     --border: 141 141 141;
     --border-primary: 52 79 204;
-    --border-secondary: 78 78 78;
+    --border-secondary: 87 87 87;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --surface-default: 8 9 11;
+    --surface-default: 18 18 18;
     --surface-inverse: 246 246 246;
-    --surface-primary: 52 79 204;
+    --surface-primary: 250 190 102;
 
     --foreground-default: 255 255 255;
     --foreground-inverse: 0 0 0;
-    --foreground-secondary: 234 237 255;
-    --foreground-primary: 52 79 204;
+    --foreground-secondary: 194 194 194;
+    --foreground-primary: 250 190 102;
     --foreground-on-primary: 255 255 255;
 
-    --border: 255 255 255;
-    --border-primary: 52 79 204;
-    --border-secondary: 234 237 255;
+    --border: 246 246 246;
+    --border-primary: 250 190 102;
+    --border-secondary: 194 194 194;
 
     --radius: 0.5rem;
   }
@@ -64,4 +64,20 @@
 
 .mapboxgl-popup-content {
   padding-bottom: 10px !important;
+}
+
+.header-highlight {
+  @apply text-foreground font-normal;
+}
+
+h2 {
+  @apply text-foreground-secondary font-mono font-medium uppercase text-sm;
+}
+
+h3 {
+  @apply font-medium;
+}
+
+.link {
+  @apply flex flex-row items-center space-x-2 text-foreground-primary font-normal border-b border-border-primary w-max hover:font-medium hover:border-b-2;
 }
