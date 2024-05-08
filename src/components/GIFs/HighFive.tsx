@@ -8,12 +8,6 @@ export default function HighFive() {
   const [randomGifUrl, setRandomGifUrl] = useState("");
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    // Generate a random index when the component mounts
-    const randomIndex = Math.floor(Math.random() * gifFiles.length);
-    setIndex(randomIndex);
-  }, []);
-
   const gifFiles = [
     "TheOffice.gif",
     "B99.gif",
@@ -26,6 +20,12 @@ export default function HighFive() {
     "Barney.gif",
     "Freevee.gif",
   ];
+
+  useEffect(() => {
+    // Generate a random index when the component mounts
+    const randomIndex = Math.floor(Math.random() * gifFiles.length);
+    setIndex(randomIndex);
+  }, [gifFiles.length]);
 
   const getGif = async () => {
     const selectedGif = gifFiles[index % gifFiles.length];
