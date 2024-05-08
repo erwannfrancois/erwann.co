@@ -71,6 +71,13 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col space-y-2">
+            <h2>Resume</h2>
+            <a href="#" target="_blank" className="link">
+              <span>Download my resume</span>
+              <LiaLongArrowAltRightSolid className="w-5 h-5" />
+            </a>
+          </div>
+          <div className="flex flex-col space-y-2">
             <h2>Current Personal Projects</h2>
             <div className="flex flex-col space-y-2">
               <div>
