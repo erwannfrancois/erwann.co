@@ -7,6 +7,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
+import HighFive from "@/components/GIFs/HighFive";
 
 export default function Home() {
   const [isCopied, setIsCopied] = useState(false);
@@ -151,7 +152,7 @@ export default function Home() {
               className="rounded-sm w-full h-auto"
             />
           </div>
-          <p>Click here to high five!</p>
+          <HighFive />
         </div>
       </div>
     </div>
