@@ -89,3 +89,15 @@ h3 {
 .home-paragraph {
   @apply flex flex-col flex-1 space-y-4 leading-snug;
 }
+
+.brand {
+  @apply text-foreground-primary font-medium hover:underline hover:underline-offset-4;
+}
+
+.contact {
+  @apply font-medium underline underline-offset-4 hover:text-foreground-primary;
+}
+
+.nav-item {
+  @apply font-medium hover:underline hover:underline-offset-4;
+}

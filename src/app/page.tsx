@@ -94,7 +94,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <ThemeSwitcher />
         </div>
       </div>
       {/* Container */}

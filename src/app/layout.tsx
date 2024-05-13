@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Header from "@/components/header/Header";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
@@ -19,18 +18,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rpw3fpi.css" />
+        <link
+          href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
+          rel="stylesheet"
+        />
       </head>
-      <body className="min-h-screen antialiased flex flex-col font-primary font-light md:px-8">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {/* HEADER */}
-          <Header />
-          <main className="flex-grow flex flex-col">{children}</main>
-        </ThemeProvider>
+      <body className="min-h-screen antialiased flex flex-col font-primary md:px-8">
+        {/* HEADER */}
+        <Header />
+        <main className="flex-grow flex flex-col">{children}</main>
       </body>
     </html>
   );

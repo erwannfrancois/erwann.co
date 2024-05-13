@@ -20,14 +20,26 @@ const config = {
     },
     extend: {
       fontFamily: {
-        primary: ["tenon", "sans-serif"],
-        mono: ["antarctican-mono", "sans-serif"],
+        primary: ["helveticaNeue", "sans-serif"],
       },
       fontSize: {
         lg: ["22px", "28px"],
         xl: ["24px", "32px"],
         display: ["36px", "46px"],
       },
+      // fontWeight: {
+      //   hairline: "100",
+      //   "extra-light": "100",
+      //   thin: "200",
+      //   light: "300",
+      //   normal: "400",
+      //   medium: "500",
+      //   semibold: "600",
+      //   bold: "700",
+      //   extrabold: "800",
+      //   "extra-bold": "800",
+      //   black: "900",
+      // },
       colors: {
         border: {
           DEFAULT: "rgb(var(--border) / <alpha-value>)",
