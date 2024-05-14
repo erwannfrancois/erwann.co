@@ -105,11 +105,7 @@ export default function Travels() {
           onLoad={onMapLoad}
           initialViewState={initialView} // Set initial view state
           {...settings}
-          mapStyle={
-            theme === "light"
-              ? "mapbox://styles/erwannfrancois/clv70h6rg009201o0atz7epcf"
-              : "mapbox://styles/erwannfrancois/clv6uu88x00mw01qv3jtf961d"
-          }
+          mapStyle={"mapbox://styles/erwannfrancois/clv70h6rg009201o0atz7epcf"} // Add additional map style if Dark Mode
           projection={{ name: "globe" }}
           style={{
             width: "100vw",
@@ -161,11 +157,11 @@ export default function Travels() {
           )}
         </Map>
       </div>
-      <div className="max-w-[1600px] mx-auto px-6 md:px-0 flex justify-start">
-        <div className="flex flex-col font-mono space-y-6 text-sm uppercase bg-surface/60 p-4 rounded-sm relative z-30 border border-border-primary">
+      <div className="wrapper flex justify-start">
+        <div className="flex flex-col space-y-6 text-sm bg-surface/60 p-4 rounded-sm relative z-30 border border-border-primary">
           <div
             onClick={toggleContent}
-            className="flex flex-row items-center space-x-8 justify-between cursor-pointer"
+            className="flex flex-row items-center space-x-8 justify-between cursor-pointer uppercase"
           >
             <span>{isOpen ? "Hide " : "Display "} map legend </span>
             {isOpen ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
