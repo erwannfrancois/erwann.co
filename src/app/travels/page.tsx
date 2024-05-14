@@ -11,7 +11,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Map, { Marker, Popup, MapRef, Source, Layer } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { LiaAngleUpSolid, LiaAngleDownSolid } from "react-icons/lia";
-import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
 
 // See fabe Github for another implementation: https://github.com/fabe/site/blob/main/pages/globe.tsx
 export default function Travels() {
@@ -202,9 +201,6 @@ export default function Travels() {
                 >
                   Fabian Schultz
                 </a>
-              </div>
-              <div className="pt-2">
-                <ThemeSwitcher />
               </div>
             </div>
           )}

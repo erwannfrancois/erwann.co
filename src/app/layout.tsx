@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
   description:
-    "Erwann François is a product-centred full-stack software engineer with a love for exploration both in code and in life. He is currently available for hire.",
+    "Erwann François is a full-stack software engineer, designer and type maker. He is currently available for hire.",
 };
 
 export default function RootLayout({
@@ -23,10 +24,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen antialiased flex flex-col font-primary md:px-8">
+      <body className="min-h-screen antialiased font-primary">
         {/* HEADER */}
         <Header />
-        <main className="flex-grow flex flex-col">{children}</main>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
