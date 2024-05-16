@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="wrapper mt-12 flex flex-col gap-10">
+      <div className="wrapper my-12 flex flex-col gap-10">
         {/* Hero Header */}
         <div className="hero__container">
           <div className="hero__text">

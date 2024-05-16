@@ -110,6 +110,11 @@ h2 {
   @apply underline underline-offset-4 link--hovered;
 }
 
+/* FOOTER */
+.footer__container {
+  @apply flex flex-row justify-between items-baseline py-4 border-t;
+}
+
 /* MAP */
 
 .pin-city {

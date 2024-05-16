@@ -3,21 +3,29 @@ import SocialLinks from "../socials/SocialLinks";
 
 export default function Footer() {
   return (
-    <footer className="relative z-40 bg-surface-primary text-foreground-on_primary mt-40 pt-40 pb-2">
-      <div className="wrapper flex flex-col md:flex-row gap-4 justify-between items-baseline">
-        <div className="flex flex-col md:flex-row items-baseline md:gap-10">
-          <Link href="/" className="brand text-3xl md:text-display">
+    <footer className="relative z-40">
+      {/* Wrapper */}
+      <div className="wrapper">
+        {/* Top Container */}
+        <div className="footer__container">
+          <Link href="/" className="font-medium link--hovered">
             Erwann François
           </Link>
-          <span>Available for hire</span>
-        </div>
-        <div className="flex flex-row items-baseline gap-10">
-          <a href="mailto:mail@erwann.co" className="footer-link">
+          <a href="mailto:mail@erwann.co" className="link--hovered">
             mail@erwann.co
           </a>
-          <SocialLinks className="footer-link" />
         </div>
+        {/* End Top Container */}
+        {/* Bottom Container */}
+        <div className="footer__container">
+          <p className="text-sm text-foreground-secondary">
+            Copyright © 2024, All Rights Reserved.
+          </p>
+          <SocialLinks />
+        </div>
+        {/* End Bottom Container */}
       </div>
+      {/* End Wrapper */}
     </footer>
   );
 }
