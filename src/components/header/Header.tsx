@@ -2,15 +2,6 @@
 
 import Link from "next/link";
 import { navigationLinks } from "@/constants/navigation";
-import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import ThemeSwitcher from "../theme/ThemeSwitcher";
