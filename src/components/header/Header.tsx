@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import ThemeSwitcher from "../theme/ThemeSwitcher";
 
 export default function Header() {
   const pathname = usePathname();
@@ -22,25 +23,32 @@ export default function Header() {
   return (
     <header className="relative z-40">
       {/* Wrapper */}
-      <div className="wrapper flex flex-row justify-between items-center md:items-baseline md:gap-12">
-        {/* Brand */}
-        <div className="flex flex-col md:w-[20%]">
-          <Link href="/" className="brand">
-            Erwann François
-          </Link>
-          <span>Available for hire</span>
+      <div className="wrapper">
+        {/* Top Container */}
+        <div className="header__container">
+          <div className="flex flex-col md:flex-row md:gap-4">
+            <Link href="/" className="font-medium link--hovered">
+              Erwann François
+            </Link>
+            <span className="text-foreground-secondary">
+              Available for hire
+            </span>
+          </div>
+          <a href="mailto:mail@erwann.co" className="link--hovered">
+            mail@erwann.co
+          </a>
         </div>
-        {/* End Brand */}
-        {/* Right Part */}
-        <div className="hidden md:flex flex-row justify-between flex-1 gap-2">
+        {/* End Top Container */}
+        {/* Bottom Container */}
+        <div className="header__container">
           <nav>
-            <ul className="flex flex-row gap-4 md:gap-10">
+            <ul className="nav__list">
               {navigationLinks.map((link) => (
                 <li
                   key={link.href}
                   className={cn(
-                    "nav-item",
-                    basePath === link.href && "underline underline-offset-4"
+                    "nav__item",
+                    basePath === link.href && "nav__item--active"
                   )}
                 >
                   <Link href={link.href} className="whitespace-nowrap">
@@ -50,37 +58,9 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <a href="mailto:mail@erwann.co" className="contact">
-            mail@erwann.co
-          </a>
+          <ThemeSwitcher />
         </div>
-        {/* End Right Part */}
-        <div>
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <div className="md:hidden w-8 h-8 flex items-center justify-center bg-surface-inverse text-foreground-inverse rounded-full">
-                <PlusIcon className="w-4 h-4" />
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-48" align="end">
-              {navigationLinks.map((link) => (
-                <DropdownMenuItem
-                  key={link.href}
-                  className={cn(
-                    basePath === link.href &&
-                      "bg-surface-primary text-foreground-inverse"
-                  )}
-                >
-                  <Link href={link.href}>{link.label}</Link>
-                </DropdownMenuItem>
-              ))}
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <a href="mailto:mail@erwann.co">mail@erwann.co</a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+        {/* End Bottom Container */}
       </div>
       {/* End Wrapper */}
     </header>

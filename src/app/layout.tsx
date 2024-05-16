@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Erwann François | Software Engineer",
@@ -18,17 +19,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://use.typekit.net/rpw3fpi.css" />
         <link
           href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
           rel="stylesheet"
         />
       </head>
       <body className="min-h-screen antialiased font-primary">
-        {/* HEADER */}
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
