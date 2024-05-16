@@ -23,9 +23,8 @@ const config = {
         primary: ["helveticaNeue", "sans-serif"],
       },
       fontSize: {
-        lg: ["22px", "28px"],
-        xl: ["24px", "32px"],
-        display: ["56px", "64px"],
+        lg: ["20px", "26px"],
+        xl: ["24px", "30px"],
       },
       colors: {
         border: {
