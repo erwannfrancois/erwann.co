@@ -6,17 +6,26 @@
   :root {
     --surface-default: 255 255 255;
     --surface-inverse: 0 0 0;
-    --surface-primary: 0 66 234;
+    --surface-secondary: 134 134 134;
 
     --foreground-default: 0 0 0;
     --foreground-inverse: 255 255 255;
-    --foreground-secondary: 142 142 142;
-    --foreground-primary: 0 66 234;
-    --foreground-on-primary: 255 255 255;
+    --foreground-secondary: 134 134 134;
 
-    --border: 141 141 141;
-    --border-primary: 0 66 234;
-    --border-secondary: 87 87 87;
+    --border: 134 134 134;
+
+    --radius: 0.5rem;
+  }
+  .dark {
+    --surface-default: 0 0 0;
+    --surface-inverse: 255 255 255;
+    --surface-secondary: 168 168 168;
+
+    --foreground-default: 255 255 255;
+    --foreground-inverse: 0 0 0;
+    --foreground-secondary: 168 168 168;
+
+    --border: 168 168 168;
 
     --radius: 0.5rem;
   }

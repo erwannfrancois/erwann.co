@@ -30,20 +30,16 @@ const config = {
       colors: {
         border: {
           DEFAULT: "rgb(var(--border) / <alpha-value>)",
-          secondary: "rgb(var(--border-secondary) / <alpha-value>)",
-          primary: "rgb(var(--border-primary) / <alpha-value>)",
         },
         surface: {
           DEFAULT: "rgb(var(--surface-default) / <alpha-value>)",
           inverse: "rgb(var(--surface-inverse) / <alpha-value>)",
-          primary: "rgb(var(--surface-primary) / <alpha-value>)",
+          secondary: "rgb(var(--surface-secondary) / <alpha-value>)",
         },
         foreground: {
           DEFAULT: "rgb(var(--foreground-default) / <alpha-value>)",
           inverse: "rgb(var(--foreground-inverse) / <alpha-value>)",
           secondary: "rgb(var(--foreground-secondary) / <alpha-value>)",
-          primary: "rgb(var(--foreground-primary) / <alpha-value>)",
-          on_primary: "rgb(var(--foreground-on-primary) / <alpha-value>)",
         },
       },
       borderRadius: {
