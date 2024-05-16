@@ -116,15 +116,36 @@ h2 {
 }
 
 /* MAP */
+.legend__container {
+  @apply flex flex-col space-y-6 text-sm bg-surface/60 p-4 rounded-sm relative z-30 border;
+}
+
+.legend__toggle {
+  @apply flex flex-row items-center space-x-8 justify-between cursor-pointer uppercase;
+}
+
+.legend__item {
+  @apply flex flex-row items-center space-x-2;
+}
+
+.legend__country-square {
+  @apply h-4 w-8 border-2 bg-clip-content;
+}
+
+.legend__point-circle {
+  @apply h-4 w-4 rounded-full border-2 bg-clip-content;
+}
 
 .pin-city {
   @apply bg-emerald-500/30;
   @apply border-emerald-500/60;
 }
+
 .pin-landmark {
   @apply bg-indigo-500/30;
   @apply border-indigo-500/60;
 }
+
 .pin-gem {
   @apply bg-yellow-500/30;
   @apply border-yellow-500/60;

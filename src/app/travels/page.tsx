@@ -105,7 +105,11 @@ export default function Travels() {
           onLoad={onMapLoad}
           initialViewState={initialView} // Set initial view state
           {...settings}
-          mapStyle={"mapbox://styles/erwannfrancois/clv70h6rg009201o0atz7epcf"} // Add additional map style if Dark Mode
+          mapStyle={
+            theme === "light"
+              ? "mapbox://styles/erwannfrancois/clv70h6rg009201o0atz7epcf"
+              : "mapbox://styles/erwannfrancois/clv6uu88x00mw01qv3jtf961d"
+          }
           projection={{ name: "globe" }}
           style={{
             width: "100vw",
@@ -150,42 +154,39 @@ export default function Travels() {
               onClose={() => setPopupInfo(null)}
               offset={2}
               closeButton={false}
-              className="text-black font-mono uppercase"
+              className="text-black uppercase"
             >
               <div>{popupInfo.desc}</div>
             </Popup>
           )}
         </Map>
       </div>
-      <div className="wrapper flex justify-start">
-        <div className="flex flex-col space-y-6 text-sm bg-surface/60 p-4 rounded-sm relative z-30 border border-border-primary">
-          <div
-            onClick={toggleContent}
-            className="flex flex-row items-center space-x-8 justify-between cursor-pointer uppercase"
-          >
+      <div className="wrapper my-4 flex justify-start">
+        <div className="legend__container">
+          <div onClick={toggleContent} className="legend__toggle">
             <span>{isOpen ? "Hide " : "Display "} map legend </span>
             {isOpen ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
           </div>
           {isOpen && (
             <div className="flex flex-col space-y-2">
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-8 cursor-pointer border-2 bg-blue-500/15 border-blue-500/60 bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__country-square bg-blue-500/15 border-blue-500/60 " />
                 <span>Countries I&apos;ve been to</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-8 cursor-pointer border-2 bg-violet-500/15 border-violet-500/60 bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__country-square bg-violet-500/15 border-violet-500/60" />
                 <span>Countries I&apos;ve lived in</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-4 cursor-pointer rounded-full border-2 pin-city bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__point-circle pin-city" />
                 <span>Cities</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-4 cursor-pointer rounded-full border-2 pin-landmark bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__point-circle pin-landmark" />
                 <span>Landmarks</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-4 cursor-pointer rounded-full border-2 pin-gem bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__point-circle pin-gem" />
                 <span>Gems</span>
               </div>
               <div className="text-xs">
