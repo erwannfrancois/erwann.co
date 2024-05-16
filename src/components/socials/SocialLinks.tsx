@@ -18,7 +18,6 @@ const SocialLinks = () => {
         icon={<SiGithub />}
       />
       <SocialMediaLink href="https://www.medium.com" icon={<SiMedium />} />
-
       <SocialMediaLink
         href="https://www.goodreads.com/erwannfrancois"
         icon={<SiGoodreads />}
@@ -42,7 +41,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ href, icon }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:opacity-80"
+      className="link--hovered"
     >
       {icon}
     </a>

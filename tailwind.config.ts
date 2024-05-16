@@ -20,31 +20,25 @@ const config = {
     },
     extend: {
       fontFamily: {
-        primary: ["tenon", "sans-serif"],
-        mono: ["antarctican-mono", "sans-serif"],
+        primary: ["helveticaNeue", "sans-serif"],
       },
       fontSize: {
-        lg: ["22px", "28px"],
-        xl: ["24px", "32px"],
-        display: ["36px", "46px"],
+        lg: ["20px", "26px"],
+        xl: ["24px", "30px"],
       },
       colors: {
         border: {
           DEFAULT: "rgb(var(--border) / <alpha-value>)",
-          secondary: "rgb(var(--border-secondary) / <alpha-value>)",
-          primary: "rgb(var(--border-primary) / <alpha-value>)",
         },
         surface: {
           DEFAULT: "rgb(var(--surface-default) / <alpha-value>)",
           inverse: "rgb(var(--surface-inverse) / <alpha-value>)",
-          primary: "rgb(var(--surface-primary) / <alpha-value>)",
+          secondary: "rgb(var(--surface-secondary) / <alpha-value>)",
         },
         foreground: {
           DEFAULT: "rgb(var(--foreground-default) / <alpha-value>)",
           inverse: "rgb(var(--foreground-inverse) / <alpha-value>)",
           secondary: "rgb(var(--foreground-secondary) / <alpha-value>)",
-          primary: "rgb(var(--foreground-primary) / <alpha-value>)",
-          on_primary: "rgb(var(--foreground-on-primary) / <alpha-value>)",
         },
       },
       borderRadius: {

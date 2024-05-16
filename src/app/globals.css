@@ -4,37 +4,28 @@
 
 @layer base {
   :root {
-    --surface-default: 246 246 246;
-    --surface-inverse: 17 17 17;
-    --surface-primary: 52 79 204;
+    --surface-default: 255 255 255;
+    --surface-inverse: 0 0 0;
+    --surface-secondary: 134 134 134;
 
     --foreground-default: 0 0 0;
     --foreground-inverse: 255 255 255;
-    --foreground-secondary: 87 87 87;
-    --foreground-primary: 52 79 204;
-    --foreground-on-primary: 255 255 255;
+    --foreground-secondary: 134 134 134;
 
-    --border: 141 141 141;
-    --border-primary: 52 79 204;
-    --border-secondary: 87 87 87;
+    --border: 134 134 134;
 
     --radius: 0.5rem;
   }
-
   .dark {
-    --surface-default: 18 18 18;
-    --surface-inverse: 246 246 246;
-    --surface-primary: 250 190 102;
+    --surface-default: 0 0 0;
+    --surface-inverse: 255 255 255;
+    --surface-secondary: 168 168 168;
 
     --foreground-default: 255 255 255;
     --foreground-inverse: 0 0 0;
-    --foreground-secondary: 194 194 194;
-    --foreground-primary: 250 190 102;
-    --foreground-on-primary: 255 255 255;
+    --foreground-secondary: 168 168 168;
 
-    --border: 246 246 246;
-    --border-primary: 250 190 102;
-    --border-secondary: 194 194 194;
+    --border: 168 168 168;
 
     --radius: 0.5rem;
   }
@@ -49,22 +40,112 @@
   }
 }
 
+/* COMMON */
+
 h2 {
-  @apply text-foreground-secondary font-mono font-medium uppercase text-sm;
+  @apply font-medium;
 }
 
-h3 {
-  @apply font-medium;
+.wrapper {
+  @apply max-w-[800px] mx-auto px-4 md:px-0;
+}
+
+.link--hovered {
+  @apply hover:text-foreground-secondary;
+}
+
+/* HEADER */
+
+.header__container {
+  @apply flex flex-row justify-between items-baseline py-4 border-b;
+}
+
+.nav__list {
+  @apply flex flex-row gap-4 md:gap-8;
+}
+
+.nav__item {
+  @apply text-foreground-secondary hover:text-foreground;
+}
+
+.nav__item--active {
+  @apply text-foreground font-medium;
+}
+
+/* HERO HEADER */
+.hero__container {
+  @apply flex flex-col gap-6;
+}
+
+.hero__text {
+  @apply flex flex-col gap-2 text-xl font-medium text-foreground-secondary;
+}
+
+.hero__text--emphasis {
+  @apply text-foreground;
+}
+
+.hero__cta {
+  @apply flex flex-row items-center gap-2 font-medium text-lg;
+}
+
+/* CONTENT */
+.content__section {
+  @apply py-8 border-t;
+}
+
+.about__wrapper {
+  @apply flex flex-row gap-3 items-baseline;
+}
+
+.about__bullet {
+  @apply w-2 h-2 bg-foreground-secondary;
+}
+
+.about__text {
+  @apply flex-1;
+}
+
+.about__link {
+  @apply underline underline-offset-4 link--hovered;
+}
+
+/* FOOTER */
+.footer__container {
+  @apply flex flex-row justify-between items-baseline py-4 border-t;
+}
+
+/* MAP */
+.legend__container {
+  @apply flex flex-col space-y-6 text-sm bg-surface/60 p-4 rounded-sm relative z-30 border;
+}
+
+.legend__toggle {
+  @apply flex flex-row items-center space-x-8 justify-between cursor-pointer uppercase;
+}
+
+.legend__item {
+  @apply flex flex-row items-center space-x-2;
+}
+
+.legend__country-square {
+  @apply h-4 w-8 border-2 bg-clip-content;
+}
+
+.legend__point-circle {
+  @apply h-4 w-4 rounded-full border-2 bg-clip-content;
 }
 
 .pin-city {
   @apply bg-emerald-500/30;
   @apply border-emerald-500/60;
 }
+
 .pin-landmark {
   @apply bg-indigo-500/30;
   @apply border-indigo-500/60;
 }
+
 .pin-gem {
   @apply bg-yellow-500/30;
   @apply border-yellow-500/60;
@@ -72,20 +153,4 @@ h3 {
 
 .mapboxgl-popup-content {
   padding-bottom: 10px !important;
-}
-
-.header-highlight {
-  @apply text-foreground font-normal;
-}
-
-.link {
-  @apply flex flex-row items-center space-x-2 text-foreground-primary font-normal border-b border-border-primary w-max hover:font-medium;
-}
-
-.right-col {
-  @apply md:w-[400px];
-}
-
-.home-paragraph {
-  @apply flex flex-col flex-1 space-y-4 leading-snug;
 }

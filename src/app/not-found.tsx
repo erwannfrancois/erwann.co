@@ -1,12 +1,12 @@
 import Image from "next/image";
 export default function Custom404() {
   return (
-    <main className="max-w-[1600px] mx-auto px-6 md:px-0 space-y-16 md:space-y-52">
-      <div className="mt-40 mb-40">
-        <p className="text-display font-mono uppercase font-medium">
+    <main className="wrapper">
+      <div className="mt-10 mb-10 flex flex-col items-center">
+        <p className="text-3xl md:text-display uppercase font-medium">
           404 Page not found
         </p>
-        <div className="mt-4">
+        <div className="my-4 md:w-[50%]">
           <Image
             src="/not-found/GIF/404.gif"
             alt="Page not found"
@@ -17,7 +17,7 @@ export default function Custom404() {
             unoptimized
           />
         </div>
-        <p className="text-display font-mono uppercase font-medium">
+        <p className="text-3xl md:text-display uppercase font-medium">
           404 Page not found
         </p>
       </div>

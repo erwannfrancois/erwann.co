@@ -11,7 +11,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Map, { Marker, Popup, MapRef, Source, Layer } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { LiaAngleUpSolid, LiaAngleDownSolid } from "react-icons/lia";
-import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
 
 // See fabe Github for another implementation: https://github.com/fabe/site/blob/main/pages/globe.tsx
 export default function Travels() {
@@ -155,42 +154,39 @@ export default function Travels() {
               onClose={() => setPopupInfo(null)}
               offset={2}
               closeButton={false}
-              className="text-black font-mono uppercase"
+              className="text-black uppercase"
             >
               <div>{popupInfo.desc}</div>
             </Popup>
           )}
         </Map>
       </div>
-      <div className="max-w-[1600px] mx-auto px-6 md:px-0 flex justify-start">
-        <div className="flex flex-col font-mono space-y-6 text-sm uppercase bg-surface/60 p-4 rounded-sm relative z-30 border border-border-primary">
-          <div
-            onClick={toggleContent}
-            className="flex flex-row items-center space-x-8 justify-between cursor-pointer"
-          >
+      <div className="wrapper my-4 flex justify-start">
+        <div className="legend__container">
+          <div onClick={toggleContent} className="legend__toggle">
             <span>{isOpen ? "Hide " : "Display "} map legend </span>
             {isOpen ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
           </div>
           {isOpen && (
             <div className="flex flex-col space-y-2">
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-8 cursor-pointer border-2 bg-blue-500/15 border-blue-500/60 bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__country-square bg-blue-500/15 border-blue-500/60 " />
                 <span>Countries I&apos;ve been to</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-8 cursor-pointer border-2 bg-violet-500/15 border-violet-500/60 bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__country-square bg-violet-500/15 border-violet-500/60" />
                 <span>Countries I&apos;ve lived in</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-4 cursor-pointer rounded-full border-2 pin-city bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__point-circle pin-city" />
                 <span>Cities</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-4 cursor-pointer rounded-full border-2 pin-landmark bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__point-circle pin-landmark" />
                 <span>Landmarks</span>
               </div>
-              <div className="flex flex-row items-center space-x-2">
-                <div className="h-4 w-4 cursor-pointer rounded-full border-2 pin-gem bg-clip-content" />
+              <div className="legend__item">
+                <div className="legend__point-circle pin-gem" />
                 <span>Gems</span>
               </div>
               <div className="text-xs">
@@ -202,9 +198,6 @@ export default function Travels() {
                 >
                   Fabian Schultz
                 </a>
-              </div>
-              <div className="pt-2">
-                <ThemeSwitcher />
               </div>
             </div>
           )}
