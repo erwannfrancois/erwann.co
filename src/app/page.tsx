@@ -1,9 +1,28 @@
+"use client";
+
 import { IoReturnDownForwardSharp } from "react-icons/io5";
 import Image from "next/image";
 import SocialLinks from "@/components/socials/SocialLinks";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { News, fetchNewsData } from "@/services/fetchNewsData";
+import NewsList from "@/components/news/NewsList";
+import { useSupabaseUrls } from "@/services/fetchHomeData";
 
 export default function Home() {
+  const [newsData, setNewsData] = useState<News[]>([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const news = await fetchNewsData();
+      setNewsData(news.slice(0, 4));
+    };
+
+    fetchNews();
+  }, []);
+
+  const { cvUrl } = useSupabaseUrls();
+
   return (
     <>
       <div className="wrapper my-12 flex flex-col gap-10">
@@ -78,7 +97,12 @@ export default function Home() {
                 <div className="about__bullet" />
                 <p className="about__text">
                   Engineering software solutions for more than 8 years. {""}
-                  <a href="#" className="about__link">
+                  <a
+                    href={cvUrl}
+                    target="_blank"
+                    download
+                    className="about__link"
+                  >
                     Download my CV
                   </a>
                 </p>
@@ -127,7 +151,7 @@ export default function Home() {
                 <span>See all news</span>
               </Link>
             </div>
-            {/* TODO: NEWS */}
+            <NewsList news={newsData} />
           </div>
           {/* End News */}
         </div>

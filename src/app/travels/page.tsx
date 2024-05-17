@@ -1,16 +1,17 @@
 "use client";
 
 import { initialViewState, mapSettings } from "@/constants/mapbox";
-import {
-  countriesLived,
-  countriesVisited,
-  places,
-} from "@/constants/placesData";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Map, { Marker, Popup, MapRef, Source, Layer } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { LiaAngleUpSolid, LiaAngleDownSolid } from "react-icons/lia";
+import {
+  LocationPin,
+  PopupInfo,
+  fetchLocationCountries,
+  fetchLocationPins,
+} from "@/services/fetchMapData";
 
 // See fabe Github for another implementation: https://github.com/fabe/site/blob/main/pages/globe.tsx
 export default function Travels() {
@@ -21,12 +22,6 @@ export default function Travels() {
   });
   const mapRef = useRef<MapRef | null>(null);
   // Popups
-  interface PopupInfo {
-    lat: number;
-    lon: number;
-    locationType: string;
-    desc: string;
-  }
   const [popupInfo, setPopupInfo] = useState<PopupInfo | null>(null);
 
   // Theme
@@ -42,30 +37,55 @@ export default function Travels() {
   };
 
   // Pins
+  const [location_pins, setLocationPins] = useState<LocationPin[]>([]);
+
+  useEffect(() => {
+    const fetchLocationData = async () => {
+      const pins = await fetchLocationPins();
+      setLocationPins(pins);
+    };
+
+    fetchLocationData();
+  }, []);
+
   const pins = useMemo(
     () =>
-      places.map((place, index) => (
+      location_pins.map((pin, index) => (
         <Marker
           key={`marker-${index}`}
-          longitude={place.lon}
-          latitude={place.lat}
+          longitude={pin.long}
+          latitude={pin.lat}
           anchor="bottom"
           onClick={(e) => {
             e.originalEvent.stopPropagation();
-            setPopupInfo(place);
+            setPopupInfo(pin);
           }}
         >
           <div
-            className={`h-2.5 w-2.5 cursor-pointer rounded-full border-2 pin-${place.locationType.toLowerCase()} bg-clip-content`}
+            className={`h-2.5 w-2.5 cursor-pointer rounded-full border-2 pin-${pin.location_type.toLowerCase()} bg-clip-content`}
           />
         </Marker>
       )),
-    []
+    [location_pins]
   );
+
+  // Countries
+  const [countries_default, setCountriesDefault] = useState<string[]>([]);
+  const [countries_lived, setCountriesLived] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      const { countriesLivedIn, countriesVisited } =
+        await fetchLocationCountries();
+      setCountriesLived(countriesLivedIn);
+      setCountriesDefault(countriesVisited);
+    };
+
+    fetchCountries();
+  }, []);
 
   // When the theme changes, the setFog is ignored so we have to reload the map
   useEffect(() => {
-    // Stores the current view to reload with the same
     if (mapRef.current) {
       const map = mapRef.current.getMap();
       if (map) {
@@ -131,7 +151,7 @@ export default function Travels() {
                 "fill-color": "#3b82f6",
                 "fill-opacity": 0.15,
               }}
-              filter={["in", "iso_3166_1", ...countriesVisited]}
+              filter={["in", "iso_3166_1", ...countries_default]}
             />
             <Layer
               id="country-lived"
@@ -141,7 +161,7 @@ export default function Travels() {
                 "fill-color": "#8b5cf6",
                 "fill-opacity": 0.15,
               }}
-              filter={["in", "iso_3166_1", ...countriesLived]}
+              filter={["in", "iso_3166_1", ...countries_lived]}
             />
           </Source>
           {pins}
@@ -149,7 +169,7 @@ export default function Travels() {
           {popupInfo && (
             <Popup
               anchor="top"
-              longitude={Number(popupInfo.lon)}
+              longitude={Number(popupInfo.long)}
               latitude={Number(popupInfo.lat)}
               onClose={() => setPopupInfo(null)}
               offset={2}

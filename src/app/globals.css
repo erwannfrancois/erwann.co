@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @layer base {
   :root {
@@ -155,4 +156,9 @@ h2 {
 
 .mapboxgl-popup-content {
   padding-bottom: 10px !important;
+}
+
+/* NEWS */
+.news__date {
+  @apply absolute top-4 left-4 flex items-start justify-start bg-surface py-1 px-1.5 rounded-xs text-xs text-foreground font-mono;
 }
