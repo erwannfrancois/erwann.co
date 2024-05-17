@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        primary: ["HelveticaNeue", "sans-serif"],
+        primary: ["Helvetica Neue", "sans-serif"],
       },
       fontSize: {
         lg: ["20px", "26px"],

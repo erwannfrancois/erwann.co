@@ -18,12 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
-          rel="stylesheet"
-        />
-      </head>
       <body className="min-h-screen antialiased font-primary">
         <ThemeProvider
           attribute="class"

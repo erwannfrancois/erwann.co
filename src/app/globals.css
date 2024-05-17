@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+
 @layer base {
   :root {
     --surface-default: 255 255 255;
