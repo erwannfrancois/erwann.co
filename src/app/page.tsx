@@ -1,9 +1,25 @@
+"use client";
+
 import { IoReturnDownForwardSharp } from "react-icons/io5";
 import Image from "next/image";
 import SocialLinks from "@/components/socials/SocialLinks";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { News, fetchNewsData } from "@/services/fetchNewsData";
+import NewsList from "@/components/news/NewsList";
 
 export default function Home() {
+  const [newsData, setNewsData] = useState<News[]>([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const news = await fetchNewsData();
+      setNewsData(news.slice(0, 4));
+    };
+
+    fetchNews();
+  }, []);
+
   return (
     <>
       <div className="wrapper my-12 flex flex-col gap-10">
@@ -127,7 +143,7 @@ export default function Home() {
                 <span>See all news</span>
               </Link>
             </div>
-            {/* TODO: NEWS */}
+            <NewsList news={newsData} />
           </div>
           {/* End News */}
         </div>

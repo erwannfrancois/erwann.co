@@ -21,8 +21,10 @@ const config = {
     extend: {
       fontFamily: {
         primary: ["Helvetica Neue", "sans-serif"],
+        mono: ["IBM Plex Mono", "monospaced"],
       },
       fontSize: {
+        xs: ["12px", "14px"],
         lg: ["20px", "26px"],
         xl: ["24px", "30px"],
       },
@@ -45,6 +47,7 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xs: "calc(var(--radius) - 6px)",
       },
       keyframes: {
         slideDownAndFade: {
