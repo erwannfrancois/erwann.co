@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { News, fetchNewsData } from "@/services/fetchNewsData";
 import NewsList from "@/components/news/NewsList";
+import { useSupabaseUrls } from "@/services/fetchHomeData";
 
 export default function Home() {
   const [newsData, setNewsData] = useState<News[]>([]);
@@ -19,6 +20,8 @@ export default function Home() {
 
     fetchNews();
   }, []);
+
+  const { cvUrl } = useSupabaseUrls();
 
   return (
     <>
@@ -94,7 +97,12 @@ export default function Home() {
                 <div className="about__bullet" />
                 <p className="about__text">
                   Engineering software solutions for more than 8 years. {""}
-                  <a href="#" className="about__link">
+                  <a
+                    href={cvUrl}
+                    target="_blank"
+                    download
+                    className="about__link"
+                  >
                     Download my CV
                   </a>
                 </p>
