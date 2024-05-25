@@ -20,12 +20,12 @@
     --radius: 0.5rem;
   }
   .dark {
-    --surface-default: 0 0 0;
+    --surface-default: 25 25 25;
     --surface-inverse: 255 255 255;
     --surface-secondary: 168 168 168;
 
     --foreground-default: 255 255 255;
-    --foreground-inverse: 0 0 0;
+    --foreground-inverse: 25 25 25;
     --foreground-secondary: 168 168 168;
 
     --border: 168 168 168;

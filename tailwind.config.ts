@@ -21,7 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         primary: ["Helvetica Neue", "sans-serif"],
-        mono: ["IBM Plex Mono", "monospaced"],
+        mono: ["IBM Plex Mono", "monospace"],
       },
       fontSize: {
         xs: ["12px", "14px"],

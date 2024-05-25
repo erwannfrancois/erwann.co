@@ -60,7 +60,7 @@ export default function Home() {
         <div className="flex flex-row justify-end">
           <div className="md:w-[50%]">
             <Image
-              src="/homepage/Images/Erwann.avif"
+              src="/homepage/Images/Erwann_Francois-2024.avif"
               alt="Erwann François - Software Engineer"
               sizes="100vw"
               width={160}
@@ -110,15 +110,15 @@ export default function Home() {
               <div className="about__wrapper">
                 <div className="about__bullet" />
                 <p className="about__text">
-                  Currently working on Embark, a project management solution for
-                  small businesses and independents. More about it coming soon.
-                </p>
-              </div>
-              <div className="about__wrapper">
-                <div className="about__bullet" />
-                <p className="about__text">
-                  Crafting custom typefaces for the future launch of EF Type
-                  Foundry, my platform to show and retail my fonts.
+                  Crafting custom typefaces for the future launch of{" "}
+                  <a
+                    href="https://eftype.xyz"
+                    target="_blank"
+                    className="about__link"
+                  >
+                    EF Type Foundry
+                  </a>
+                  , my platform to show and retail my fonts.
                 </p>
               </div>
               <div className="about__wrapper">

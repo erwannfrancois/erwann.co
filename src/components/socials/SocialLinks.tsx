@@ -17,7 +17,10 @@ const SocialLinks = () => {
         href="https://github.com/erwannfrancois"
         icon={<SiGithub />}
       />
-      <SocialMediaLink href="https://www.medium.com" icon={<SiMedium />} />
+      <SocialMediaLink
+        href="https://www.medium.com/@erwann.francois"
+        icon={<SiMedium />}
+      />
       <SocialMediaLink
         href="https://www.goodreads.com/erwannfrancois"
         icon={<SiGoodreads />}
