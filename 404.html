@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page not found — Erwann François</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0015ff">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script>
+      try { var t = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = t = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.querySelector('meta[name="theme-color"]').content = t === "dark" ? "#87ffaf" : "#0015ff";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400&display=swap">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a class="name" href="/" data-home>Erwann François</a>
+        <div class="header__mid">
+          <p class="status" data-i18n="status">Available for hire</p>
+          <div class="settings mono">
+            <button class="swatch" type="button" data-theme-toggle data-label-dark="Switch to dark theme" data-label-light="Switch to light theme" aria-label="Switch to dark theme"></button>
+            <a class="lang" href="/fr/" data-i18n="lang">Français</a>
+          </div>
+        </div>
+        <button class="mail mono" type="button" data-copy="mail@erwann.co" data-copied="Copied!" aria-label="Copy email address">
+          <span class="icon" aria-hidden="true"><img class="on-light" src="/assets/light/copy.svg" alt=""><img class="on-dark" src="/assets/dark/copy.svg" alt=""></span>
+          <span class="mail__text" aria-live="polite">mail@erwann.co</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="row">
+          <h1 class="label">404</h1>
+          <div class="stack">
+            <p class="exp__title" data-i18n="title">This page doesn't exist.</p>
+            <p class="status" data-i18n="text">The link may be broken, or the page may have moved.</p>
+            <a class="link mono" href="/" data-home>
+              <span class="link__text" data-i18n="back">← Back to home</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Same page for every missing URL: switch to French under /fr
+      if (location.pathname.startsWith("/fr")) {
+        var fr = {
+          status: "Disponible pour de nouvelles opportunités",
+          lang: "English",
+          title: "Cette page n'existe pas.",
+          text: "Le lien est peut-être cassé, ou la page a été déplacée.",
+          back: "← Retour à l'accueil",
+        };
+        document.documentElement.lang = "fr";
+        document.title = "Page introuvable — Erwann François";
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          el.textContent = fr[el.dataset.i18n];
+        });
+        document.querySelector(".lang").href = "/";
+        document.querySelectorAll("[data-home]").forEach(function (el) {
+          el.href = "/fr/";
+        });
+        var toggle = document.querySelector("[data-theme-toggle]");
+        toggle.dataset.labelDark = "Passer au thème sombre";
+        toggle.dataset.labelLight = "Passer au thème clair";
+        var mail = document.querySelector("[data-copy]");
+        mail.dataset.copied = "Copié !";
+        mail.setAttribute("aria-label", "Copier l'adresse e-mail");
+      }
+    </script>
+  </body>
+</html>
