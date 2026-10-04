@@ -3,9 +3,11 @@ const THEME_KEY = "theme";
 
 // Theme toggle
 const themeButton = document.querySelector("[data-theme-toggle]");
+const themeColor = document.querySelector('meta[name="theme-color"]');
 
 function applyTheme(theme) {
   root.dataset.theme = theme;
+  themeColor.content = getComputedStyle(root).getPropertyValue("--color-label").trim();
   const next = theme === "dark" ? "light" : "dark";
   themeButton.setAttribute("aria-label", themeButton.dataset[`label${next === "dark" ? "Dark" : "Light"}`]);
 }

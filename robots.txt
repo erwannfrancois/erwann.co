@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erwann.co/sitemap.xml

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Erwann François — Ingénieur Frontend &amp; Design</title>
-    <meta name="description" content="Erwann François, ingénieur frontend français, à la jonction entre le code et le design.">
+    <meta name="description" content="Erwann François, ingénieur frontend et design engineer français. React, TypeScript et UI/UX, entre le code et le design.">
     <link rel="canonical" href="https://erwann.co/fr/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://erwann.co/fr/">
     <meta property="og:title" content="Erwann François — Ingénieur Frontend &amp; Design">
-    <meta property="og:description" content="Erwann François, ingénieur frontend français, à la jonction entre le code et le design.">
+    <meta property="og:description" content="Erwann François, ingénieur frontend et design engineer français. React, TypeScript et UI/UX, entre le code et le design.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://erwann.co/assets/shared_link_preview/Shared_Link_Preview.jpg">
@@ -17,13 +17,52 @@
     <meta property="og:image:height" content="1260">
     <meta property="og:image:alt" content="Erwann François — Ingénieur frontend, Design engineer">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0015ff">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="alternate" hreflang="en" href="https://erwann.co/">
     <link rel="alternate" hreflang="fr" href="https://erwann.co/fr/">
+    <link rel="alternate" hreflang="x-default" href="https://erwann.co/">
     <script>
       try { var t = localStorage.getItem("theme"); } catch (e) {}
-      document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = t = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.querySelector('meta[name="theme-color"]').content = t === "dark" ? "#87ffaf" : "#0015ff";
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Erwann François",
+        "url": "https://erwann.co/fr/",
+        "email": "mailto:mail@erwann.co",
+        "jobTitle": "Ingénieur Frontend Senior",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Hexagon",
+          "url": "https://hexagon.com"
+        },
+        "nationality": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "knowsLanguage": [
+          "en",
+          "fr"
+        ],
+        "knowsAbout": [
+          "Frontend engineering",
+          "Design engineering",
+          "React",
+          "TypeScript",
+          "GraphQL",
+          "UI/UX design",
+          "Figma"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/erwannfrancois/",
+          "https://strava.app.link/1iy9IPwXX6b"
+        ]
+      }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
